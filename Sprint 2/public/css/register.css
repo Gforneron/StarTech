@@ -1,6 +1,6 @@
 body {
     font-family: sans-serif;
-    background: url("/img/fondo.jpg") no-repeat center top;
+    background: url("/images/fondo.jpg") no-repeat center top;
     background-size: cover;
     margin: 0;
     height: 100vh;
@@ -42,6 +42,7 @@ header {
 
 img {
     height: 70px;
+    cursor: pointer;
 }
 
 a {
@@ -105,5 +106,14 @@ a {
 }
 
 nav {
-    margin-right: 15px;
+    width: 25%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+.Bajo_formulario{
+    display: flex;
+    justify-content: space-between;
 }
