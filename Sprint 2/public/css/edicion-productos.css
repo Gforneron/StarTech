@@ -18,7 +18,7 @@ a:hover {
     color: rgb(135, 129, 129);
 }
 a {
-    color: whitesmoke;
+    color: rgb(245, 245, 245);
     text-decoration: none;
 }
 .titulo {
@@ -71,7 +71,7 @@ form {
 }
 .botones input{
     color: whitesmoke;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
 }
 .botones {
     display: flex;

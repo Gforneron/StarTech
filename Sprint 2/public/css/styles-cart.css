@@ -88,8 +88,8 @@ body{
   cursor: pointer;
 }
 .cart-summary button {
-  background-color: white;
-  color: black;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   border: 2px solid rgb(51, 0, 255);;
   border-radius: 10px;
   padding: 10px;
@@ -100,7 +100,7 @@ body{
 nav {
   width: 102%;
   height: 80px;
-  background-color: rgb(27, 27, 27);
+  background-color: rgb(26, 26, 26);
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -143,6 +143,6 @@ nav {
     font-family: Roboto;
     background-color: rgba(0, 0, 0, 0.362);
     border-radius: 10px;
-    color: white;
+    color: rgb(255, 255, 255);
   }
 }
