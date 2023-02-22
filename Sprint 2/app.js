@@ -18,6 +18,8 @@ app.listen(port, () => console.log("Corriendo servidor"));
 app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, "views/home.html"));
 });
+app.get('/home',(req,res) => res.sendFile(path.resolve('./views/home.html')))
+
 app.get('/detalles',(req,res) => res.sendFile(path.resolve(__dirname,'./views/detalle-producto.html')));
 
 app.get('/register',(req,res) => res.sendFile(path.resolve(__dirname,'./views/register.html')))
