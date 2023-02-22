@@ -1,0 +1,119 @@
+body {
+    font-family: sans-serif;
+    background: url("/images/fondo.jpg") no-repeat center top;
+    background-size: cover;
+    margin: 0;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(26, 26, 26);
+}
+
+.register h3 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.register {
+    border-radius: 2%;
+    width: 350px;
+    height: 470px;
+    background: rgb(25, 25, 25);
+    color: #fff;
+    top: 55%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 25px 40px;
+}
+
+.register label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+}
+
+img {
+    height: 70px;
+    cursor: pointer;
+}
+
+a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.register input {
+    width: 100%;
+    margin-bottom: 9px;
+}
+
+.register input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    background: whitesmoke;
+    color: rgb(42, 40, 40);
+    font-size: 18px;
+    border-radius: 15px;
+}
+
+.register input[type="text"],
+.register input[type="password"],
+.register input[type="email"] {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    height: 40px;
+    color: whitesmoke;
+    font-size: 15px;
+}
+.register input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: rgb(42, 40, 40);;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 10px;
+    letter-spacing: 2px;
+}
+
+[type="submit"]:hover {
+    background-color: rgb(42, 40, 40);
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+        0 0 10px #03e9f4,
+        0 0 20px #03e9f4,
+        0 0 5px #03e9f4;
+    cursor: pointer;
+}
+
+nav {
+    width: 25%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+.Bajo_formulario{
+    display: flex;
+    justify-content: space-between;
+}
