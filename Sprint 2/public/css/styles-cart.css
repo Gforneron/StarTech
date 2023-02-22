@@ -1,85 +1,85 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
-html{
+html {
   width: 100%;
 }
-body{
+body {
   margin: 0;
   background-color: rgb(0, 0, 0);
   width: 98%;
 }
 .carrito-compras {
-    width: 100%;
-    margin: 50px 0; 
-    padding-left: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-right: 0px;
-    display: flex; 
-    font-family: Roboto;
-    background-color: rgb(0, 0, 0);
-  }
-  .productos {
-    width: 63%; 
-    padding: 20px;
-    border: 1px solid rgb(51, 0, 255);;  
-    font-family: Roboto;
-    background-color: rgba(0, 0, 0, 0.362);
-    border-radius: 10px;
-    color: white;
-  }
-  img {
-    width: 140px;
-    height: 130px; 
-    margin-right: 10px; 
-    border-radius: 10px;
-  }
-  .producto {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid rgb(51, 0, 255);
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    font-family: Roboto;
-    margin-right: 12%;
-    color: white;
-    }
-    h2{
-      border-bottom: 1px solid rgb(51, 0, 255);
-    }
-    .info-producto {
-    flex-basis: 90%;
-    font-family: Roboto;
-    }
-    .lista-productos {
-        margin-bottom: 80px;
-        font-family: Roboto;
-        }
-.contador{
+  width: 100%;
+  margin: 50px 0;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 0px;
+  display: flex;
+  font-family: Roboto;
+  background-color: rgb(0, 0, 0);
+}
+.productos {
+  width: 63%;
+  padding: 20px;
+  border: 1px solid rgb(51, 0, 255);
+  font-family: Roboto;
+  background-color: rgba(0, 0, 0, 0.362);
+  border-radius: 10px;
+  color: white;
+}
+img {
+  width: 140px;
+  height: 130px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+.producto {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid rgb(51, 0, 255);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-family: Roboto;
+  margin-right: 12%;
+  color: white;
+}
+h2 {
+  border-bottom: 1px solid rgb(51, 0, 255);
+}
+.info-producto {
+  flex-basis: 90%;
+  font-family: Roboto;
+}
+.lista-productos {
+  margin-bottom: 80px;
+  font-family: Roboto;
+}
+.contador {
   flex-basis: 90%;
 }
-.num{
+.num {
   font-size: 20px;
-  
 }
-.incremento, .decremento{
+.incremento,
+.decremento {
   color: white;
 }
 .contador button {
-  background-color: rgb(51, 0, 255);;
+  background-color: rgb(51, 0, 255);
   border-radius: 10px;
   padding: 10px;
   font-size: 15px;
   cursor: pointer;
 }
-.cart-summary{
+.cart-summary {
   background-color: rgb(0, 0, 0);
   height: 50%;
   width: 27%;
   margin-left: 20px;
   border-radius: 10px;
   padding: 20px;
-  border: 1px solid rgb(51, 0, 255);;
+  border: 1px solid rgb(51, 0, 255);
   margin-top: 20px;
   color: white;
 }
@@ -90,7 +90,7 @@ body{
 .cart-summary button {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
-  border: 2px solid rgb(51, 0, 255);;
+  border: 2px solid rgb(51, 0, 255);
   border-radius: 10px;
   padding: 10px;
   font-size: 20px;
@@ -111,7 +111,9 @@ nav {
   height: 130px;
   margin-left: 15px;
   padding-top: 1px;
+  cursor: pointer;
 }
+
 @media (max-width: 768px) {
   .carrito-compras {
     flex-direction: column;
@@ -120,9 +122,9 @@ nav {
     padding: 10px;
   }
   .productos {
-    width: 100%; 
+    width: 100%;
     padding: 10px;
-    border: none;  
+    border: none;
     font-size: 16px;
     background-color: rgba(0, 0, 0, 0.8);
   }
@@ -137,9 +139,9 @@ nav {
     background-color: rgb(0, 0, 0);
   }
   .productos {
-    width: 100%; 
+    width: 100%;
     padding: 10px;
-    border: 1px solid rgb(51, 0, 255);;  
+    border: 1px solid rgb(51, 0, 255);
     font-family: Roboto;
     background-color: rgba(0, 0, 0, 0.362);
     border-radius: 10px;
