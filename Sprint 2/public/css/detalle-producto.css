@@ -1,0 +1,164 @@
+body {
+    background: url("/images/fondo.jpg") no-repeat center top;
+    background-size: cover;
+    font-family: Arial;
+    margin: 0;
+}
+nav {
+    margin-right: 15px;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgb(26, 26, 26);
+}
+a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+.productos-similares {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    padding-top: 3%;
+    padding-bottom: -3%;
+    border-radius: 5px;
+    left: 37%;
+    background-color: rgb(26, 26, 26);
+}
+.descripcion-producto {
+    font-weight: 400;
+    font-size: 20px;
+    position: relative;
+    margin-bottom: 16px;
+    right: 13%;
+    color: whitesmoke;
+}
+.productos-similares  img{
+    margin-top: -2px;
+    border-radius: 10px;
+}
+#similares {
+    text-align: center;
+    margin-left: 35px;
+    width: 93.5%;
+    color: whitesmoke;
+    padding: 1%;
+    border-radius: 5px;
+    background-color: rgb(26, 26, 26);
+}
+#buscador {
+    height: 25px;
+    text-align: center;
+    position: relative;
+    left: 60%;
+    width: 15%;
+    outline: none;
+}
+.descripcion {
+    border-radius: 5px;
+    margin-top: 25px;
+    position: relative;
+    left: 65%;
+    width: 15%;
+    background-color: rgb(26, 26, 26);
+    padding-right: 18%;
+    padding-bottom: 30%;
+}
+.descripcion p {
+    color: whitesmoke;
+    font-size: 15px;
+    position: absolute;
+    left: 55%;
+    bottom: 54%;
+}
+.descripcion span{
+    color: whitesmoke;
+    font-size: 35px;
+    position: absolute;
+    left: 30px;
+    bottom: 65%;
+}
+#parrafo {
+    text-align: center;
+    position: absolute;
+    top: 57%;    
+    left: 10%;
+    bottom: 10%;
+    margin-right: 10%;
+}
+#producto {
+    position: absolute;
+    border-radius: 10px;
+    left: 4%;
+    bottom: 27%;
+    width: 23%;
+    height: 55.5%;
+}
+#detalles {
+    color: whitesmoke;
+    position: absolute;
+    left: 30%;
+    text-align: center;
+    bottom: 10rem;
+}
+.descripcion h3{
+    color: whitesmoke;
+    position: absolute;
+    left: 30%;
+    text-align: center;
+}
+#reseñas {
+    text-align: center;
+    margin-left: 35px;
+    width: 93.5%;
+    color: whitesmoke;
+    padding: 1%;
+    border-radius: 5px;
+    background-color: rgb(26, 26, 26);
+}
+#comentarios {
+    text-align: center;
+    margin-left: 35px;
+    width: 30%;
+    color: whitesmoke;
+    padding: 1%;
+    position: relative;
+    left: 55%;
+    border-radius: 5px;
+    background-color: rgb(26, 26, 26);
+}
+.comentarios {
+    padding: 20%;
+    border-radius: 5px;
+    padding-bottom: 1%;
+    margin-bottom: 40px;
+    position: relative;
+    left: 50%;
+    width: 5%;
+    background-color: rgb(26, 26, 26);
+}
+.comentarios span{
+    color: whitesmoke;
+    position: relative;
+    bottom: 13rem;
+    right: 15rem;
+    padding: 13px;
+    border-radius: 80%;
+    background-color: rgb(39, 39, 39);
+    font-size: 30px;
+}
+.comentarios p{
+    padding: 3%;
+    background-color: rgb(38, 38, 38);
+    left: 15%;
+    width: 50%;
+    border-radius: 10px;
+    position: absolute;
+    color: whitesmoke;
+    top: 1%;
+}
