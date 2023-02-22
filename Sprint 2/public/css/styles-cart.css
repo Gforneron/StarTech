@@ -111,9 +111,37 @@ nav {
   margin-left: 15px;
   padding-top: 1px;
 }
-
-
-
-
-        
-        
+@media (max-width: 768px) {
+  .carrito-compras {
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    padding: 10px;
+  }
+  .productos {
+    width: 100%; 
+    padding: 10px;
+    border: none;  
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+@media (max-width: 360px) {
+  .carrito-compras {
+    width: 100%;
+    margin: 5% 0;
+    padding: 5% 2%;
+    display: block;
+    font-family: Roboto;
+    background-color: rgb(0, 0, 0);
+  }
+  .productos {
+    width: 100%; 
+    padding: 10px;
+    border: 1px solid rgb(51, 0, 255);;  
+    font-family: Roboto;
+    background-color: rgba(0, 0, 0, 0.362);
+    border-radius: 10px;
+    color: white;
+  }
+}
