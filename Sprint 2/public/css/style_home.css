@@ -14,9 +14,9 @@ body {
 }
 
 .main-header {
-  background-color: rgb(26, 26, 26);
+  background-color: #1a1a1a;
   padding: 0.3rem;
-  color: rgb(255, 255, 255);
+  color: #fff;
 }
 
 .logo {
@@ -51,8 +51,8 @@ body {
 }
 
 .fa-magnifying-glass {
-  background-color: rgb(220, 220, 220);
-  border: 0.0625rem solid rgb(0, 0, 0);
+  background-color: #dcdcdc;
+  border: 0.0625rem solid black;
   padding: 0.5rem 0.375rem 0.875rem 0.625rem;
   text-align: center;
   font-size: 1.5625rem;
@@ -105,15 +105,15 @@ h2{
   color: whitesmoke;
 }
 #envio{
-  color: rgb(57, 181, 74);
+  color: #39b54a;
 }
 .producto h4, p{
   font-size: 20px;
 }
 
 .main-footer {
-  background-color: rgb(26, 26, 26);
-  color: rgb(255, 255, 255);
+  background-color: #1a1a1a;
+  color: #fff;
   padding: 2rem;
   display: flex;
   flex-wrap: wrap;
@@ -146,21 +146,21 @@ h2{
 }
 
 .footer-social-icons a {
-  color: rgb(255, 255, 255);
+  color: #fff;
   font-size: 1.5rem;
 }
 .fa-facebook{
-  color: rgb(59, 89, 152);
+  color: #3b5998;
 }
 .fa-twitter{
-  color: rgb(0, 172, 238);
+  color: #00acee;
 }
 .fa-instagram{
-  color: rgb(88, 81, 219);
+  color: #5851DB ;
 }
 .contorno:hover{
   color: rgb(201, 201, 201);
-}
+}                
 .producto:hover {
   box-shadow: 0px 0px 10px rgb(0, 0, 0);
 }
