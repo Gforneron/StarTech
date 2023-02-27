@@ -3,7 +3,11 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const port = process.env.port || 3000;
-const mainRuta = require('../routers/main.js')
+const mainRuta = require('../routers/main.js');
+
+// Declaracion EJS
+
+app.set('view engine', 'ejs');
 
 // declaracion y uso de recursos de public
 
