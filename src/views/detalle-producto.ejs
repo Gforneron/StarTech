@@ -7,18 +7,13 @@
     <title>Detalles</title>
     <link rel="stylesheet" href="/css/detalle-producto.css">
     <link rel="shortcut icon" href="/images/logo.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e6313bd8bc.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <img src="/images/Logo_StarTech.svg" height="70px">
-        <nav>
-            <a href="">Inicio</a>
-            <a href="">Contacto</a>
-            <a href="">Nosotros</a>
-        </nav>
-        <input type="text" id="buscador" placeholder="Buscador">
-    </header>
+
+    <%- include('./partials/header') %>
+
     <main>
         <img src="/images/Celular-Motorola.jpg" id="producto">
         <div class="descripcion">
@@ -50,5 +45,8 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta vero iste harum blanditiis consequatur placeat, qui sunt beatae delectus. Adipisci mollitia autem in velit rem officiis dignissimos ut voluptatum maiores.</p>
         </div>
     </main>
+
+    <%- include('./partials/footer') %>  
+
 </body>
 </html>

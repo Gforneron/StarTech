@@ -13,31 +13,9 @@
 
 <body>
 
-  <header class="main-header">
-    <div class="main-header-top-bar">
-      <img src="/images/logo_StarTech.svg" class="logo" onclick="location.href='/'">
-      <form class="formulary" action="#" method="POST">
-        <div class="inputdebarra">
-          <input class="contenedor_barra_de_busqueda" type="search" placeholder="Buscar productos, marcas" />
-          <span class="fa-solid fa-magnifying-glass sombra"></span>
-        </div>
-      </form>
-      <span class="fa-solid fa-user contorno" onclick="location.href='/login'"></span>
-      <span class="fa-solid fa-cart-shopping contorno" onclick="location.href='/carrito'"> </span>
-    </div>
-    <nav>
-      <ul class="main-navbar">
-      <li><a href="#" class="contorno">Ofertas </a></li>
-      <li><a href="#" class="contorno">Informática y Móviles</a></li>
-      <li><a href="#" class="contorno">Congeladores </a></li>
-      <li><a href="#" class="contorno">Lavado y secado </a></li>
-      <li><a href="#" class="contorno">Lavavajillas </a></li>
-      <li><a href="#" class="contorno">Electrodomésticos </a></li>
-      <li><a href="#" class="contorno">Tv y Audio</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
+  <%- include('./partials/header') %>
+
+<main>
     <h2>Basado en su ultima visita</h2>
     <section class="articulos">
       <div class="cafetera">
@@ -125,37 +103,9 @@
       </div>
     </section>
   </main>
-<footer class="main-footer">
-  <div class="footer-section">
-    <h4>Navegación</h4>
-    <ul>
-    <nav class="navegacion">
-      <li><a href="/" class="contorno">Home </a></li>
-      <li><a href="detalles" class="contorno">detalles de producto</a></li>
-      <li><a href="login" class="contorno">Ingresar</a></li>
-      <li><a href="register" class="contorno">Registrarse </a></li>
-      <li><a href="carrito" class="contorno">Carrito de compras </a></li>
-      </ul>
-  </div>
-  <div class="footer-section">
-    <h4>Información de contacto</h4>
-    <ul>
-      <li>Dirección: Av San Martin 789</li>
-      <li>Teléfono: 2964-478901</li>
-      <li>Correo electrónico: StarTech@gmail.com</li>
-    </ul>
-  </div>
-  <div class="footer-section">
-    <h4>Síguenos en redes sociales</h4>
-    <div class="footer-social-icons">
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-google"></i></a>
-    </div>
-    <div class="footer-section">
-  </div>
-</footer>
+
+  <%- include('./partials/footer') %>  
+
 </body>
 
 </html>
