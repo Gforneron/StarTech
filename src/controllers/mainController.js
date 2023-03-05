@@ -1,23 +1,23 @@
 const path = require('path');
 
-const mainController = {
-    home: (req, res) => {
-        res.render(path.resolve(__dirname, "../views/home.ejs"));
-    },
-    detalles: (req, res) => {
-        res.render(path.resolve(__dirname, "../views/detalle-producto.ejs"));
-    },
-    carrito: (req, res) => {
-        res.render(path.resolve(__dirname, "../views/productCart.ejs"));
-    },
-    register: (req, res) => {
-        res.render(path.resolve(__dirname, "../views/register.ejs"));
-    },
-    login: (req, res) => {
-        res.render(path.resolve(__dirname, "../views/login.ejs"));
-    },
-    form: (req,res) => {
-        res.render(path.resolve(__dirname,"../views/form-edit.ejs"));
+const mainController = {};
+
+mainController.home = (req, res) => {
+        return res.render("home");
     }
-};
+mainController.detalles = (req, res) => {
+        return res.render("detalle-producto");
+    }
+mainController.carrito = (req, res) => {
+        return res.render("productCart");
+    }
+mainController.register = (req, res) => {
+        return res.render ("register");
+    }
+mainController.login = (req, res) => {
+        return res.render ("login");
+    }
+mainController.form = (req,res) => {
+        return res.render("form-edit")
+    }
 module.exports = mainController;
