@@ -8,4 +8,5 @@ router.get('/carrito', mainController.carrito)
 router.get('/register', mainController.register)
 router.get('/login', mainController.login)
 router.get('/form-edit',mainController.form)
+router.get('/form-charge',mainController.charge)
 module.exports = router;

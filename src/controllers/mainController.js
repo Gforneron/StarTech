@@ -83,4 +83,7 @@ mainController.login = (req, res) => {
 mainController.form = (req,res) => {
     return res.render("form-edit")
 }
+mainController.charge = (req,res) => {
+    return res.render("form-charge")
+}
 module.exports = mainController;
