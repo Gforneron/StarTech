@@ -130,10 +130,9 @@ body {
   height: 470px;
   background: rgb(25, 25, 25);
   color: rgb(255, 255, 255);
-  top: 70%;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
+  left: 38%;
+  margin-top: 40px;
+  position: relative;
   box-sizing: border-box;
   padding: 25px 40px;
 }
