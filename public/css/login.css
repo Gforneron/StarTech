@@ -1,21 +1,21 @@
-body{
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
-    background: url("/images/fondo.jpg") no-repeat center top;
-    background-size: cover;
-    height: 100vh;
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  background: url("/images/fondo.jpg") no-repeat center top;
+  background-size: cover;
+  height: 100vh;
 }
 .main-header {
-    background-color: #1a1a1a;
-    padding: 0.3rem;
-    color: #fff;
-  }
-  .logo {
-    height: 6.25rem;
-    cursor: pointer;
-  }
-  .fa-solid,
+  background-color: #1a1a1a;
+  padding: 0.3rem;
+  color: #fff;
+}
+.logo {
+  height: 6.25rem;
+  cursor: pointer;
+}
+.fa-solid,
 .fa-magnifying-glass {
   font-size: 2.5rem;
   cursor: pointer;
@@ -26,7 +26,8 @@ body{
   display: flex;
   justify-content: space-around;
 }
-.main-navbar a, .navegacion a {
+.main-navbar a,
+.navegacion a {
   text-decoration: none;
   color: whitesmoke;
   display: inline-block;
@@ -44,10 +45,11 @@ body{
   text-align: center;
   font-size: 1.5625rem;
 }
-.fa-user, .fa-cart-shopping{
+.fa-user,
+.fa-cart-shopping {
   font-size: 30px;
 }
-.sombra:hover{
+.sombra:hover {
   box-shadow: 0px 0px 10px rgb(0, 0, 0);
 }
 .contenedor_barra_de_busqueda {
@@ -60,127 +62,125 @@ body{
   justify-content: space-around;
   align-items: center;
 }
-.contorno:hover{
-    color: rgb(201, 201, 201);
-  }  
-  .main-footer {
-    background-color: #1a1a1a;
-    color: #fff;
-    padding: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 34rem;
-    font-family: sans-serif;
-  }
-  .footer-section {
-    margin-bottom: 1.5rem;
-  }
-  
-  .footer-section h4 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-  }
-  
-  .footer-section ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .footer-section ul li {
-    margin-bottom: 0.5rem;
-  }
-  .footer-social-icons {
-    display: flex;
-    column-gap: 1rem;
-    margin-top: 1.5rem;
-  }
-  
-  .footer-social-icons a {
-    color: #fff;
-    font-size: 1.5rem;
-  }
-  .fa-facebook{
-    color: #3b5998;
-  }
-  .fa-twitter{
-    color: #00acee;
-  }
-  .fa-instagram{
-    color: #5851DB ;
-  }
-  .navegacion a {
-    text-decoration: none;
-    color: whitesmoke;
-    display: inline-block;
-    padding: 0.3125rem 0;
-    font-size: 2vh;
-  } 
+.contorno:hover {
+  color: rgb(201, 201, 201);
+}
+.main-footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 34rem;
+  font-family: sans-serif;
+}
+.footer-section {
+  margin-bottom: 1.5rem;
+}
+
+.footer-section h4 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+.footer-social-icons {
+  display: flex;
+  column-gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.footer-social-icons a {
+  color: #fff;
+  font-size: 1.5rem;
+}
+.fa-facebook {
+  color: #3b5998;
+}
+.fa-twitter {
+  color: #00acee;
+}
+.fa-instagram {
+  color: #5851db;
+}
+.navegacion a {
+  text-decoration: none;
+  color: whitesmoke;
+  display: inline-block;
+  padding: 0.3125rem 0;
+  font-size: 2vh;
+}
 a {
-    text-decoration: none;
-    color: rgb(245, 245, 245);
+  text-decoration: none;
+  color: rgb(245, 245, 245);
 }
 .login h3 {
-    text-align: center;
+  text-align: center;
 }
 .login {
-    border-radius: 2%;
-    width: 320px;
-    height: 420px;
-    background: rgb(25, 25, 25);
-    color: rgb(255, 255, 255);
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    box-sizing: border-box;
-    padding: 30px 30px;
+  border-radius: 2%;
+  width: 320px;
+  height: 420px;
+  background: rgb(25, 25, 25);
+  color: rgb(255, 255, 255);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 30px 30px;
 }
-.login label{
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-    display: block;
+.login label {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  display: block;
 }
 
 .login input {
-    width: 100%;
-    margin-bottom: 25px;
+  width: 100%;
+  margin-bottom: 25px;
 }
 .login input[type="text"],
 .login input[type="password"] {
-    border: none;
-    outline: none;
-    border-bottom: 1px solid rgb(255, 255, 255);
-    background: transparent;
-    height: 40px;
-    color: rgb(245, 245, 245);
-    font-size: 16px;    
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  background: transparent;
+  height: 40px;
+  color: rgb(245, 245, 245);
+  font-size: 16px;
 }
 
-.login input[type="submit"]{
-    border: none;
-    outline: none;
-    height: 40px;
-    background: rgb(42, 40, 40);;
-    color: rgb(255, 255, 255);
-    font-size: 18px;
-    border-radius: 15px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: .5s;
-    margin-top: 8px;
-    letter-spacing: 2px;
+.login input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  background: rgb(42, 40, 40);
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  border-radius: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 8px;
+  letter-spacing: 2px;
 }
-[type="submit"]:hover{
-background-color: rgb(42, 40, 40);
-color: #fff;
-border-radius: 5px;
-box-shadow: 0 0 5px rgb(3, 233, 244),
-            0 0 10px rgb(3, 233, 244),
-            0 0 20px rgb(3, 233, 244),
-            0 0 5px rgb(3, 233, 244);
-cursor: pointer;
+[type="submit"]:hover {
+  background-color: rgb(42, 40, 40);
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgb(3, 233, 244), 0 0 10px rgb(3, 233, 244),
+    0 0 20px rgb(3, 233, 244), 0 0 5px rgb(3, 233, 244);
+  cursor: pointer;
 }
