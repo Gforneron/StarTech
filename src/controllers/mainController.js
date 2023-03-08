@@ -1,9 +1,7 @@
-const path = require('path');
 const mainController = {}
-let productos_1 = [];
-let productos_2 = [];
+let productos = [];
 
-productos_1.push({
+productos.push({
     id: 1,
     nombre: "Celular Motorola",
     precio: "129.999",
@@ -34,9 +32,7 @@ productos_1.push({
     descuento: "30",
     imagen: "Notebook-Noblex.jpg ",
     clase: "televisor"
-})
-
-productos_2.push({
+},{
     id: 5,
     nombre: "Placa de Video",
     precio: "120.000",
@@ -65,11 +61,12 @@ productos_2.push({
     imagen: "Tablet-Lenovo.jpg",
 })
 
+
 mainController.home = (req, res) => {
-    return res.render ( "home.ejs", { productos_1, productos_2 });
+    return res.render ( "home.ejs", { productos });
 }
 mainController.detalles = (req, res) => {
-    return res.render ( "detalle-producto" )
+    return res.render ("detalle-producto" )
 }
 mainController.carrito = (req, res) => {
     return res.render ("productCart")
@@ -85,5 +82,8 @@ mainController.form = (req,res) => {
 }
 mainController.charge = (req,res) => {
     return res.render("form-charge")
+}
+mainController.listado = (req, res) => {
+    return res.render("listado-producto", {productos})
 }
 module.exports = mainController;

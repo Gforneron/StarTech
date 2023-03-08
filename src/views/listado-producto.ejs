@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles</title>
+    <link rel="shortcut icon" href="/images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style-listado.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e6313bd8bc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <%- include('./partials/header') %>
+
+        <main>
+            <% for (let i=0; i < productos.length; i++) { %>
+                <div class="producto">
+                    <img src="/images/<%= productos[i].imagen %>" alt="Imagen de Placa de Video">
+                    <div class="descripcion" onclick="location.href= '/detalles/:<%= productos[i].id%>'">
+                        <h4>
+                            <%= productos[i].nombre %>
+                        </h4>
+                        <p id="precios"></span>$<%= productos[i].precio %>
+                        </p>
+                        <p id="descuentos">
+                            <%= productos[i].descuento%>% OFF
+                        </p>
+                        <p id="envio">Envio Gratis</p>
+                    </div>
+                </div>
+                <% } %>
+        </main>
+
+        <%- include('./partials/footer') %>
+
+</body>
+
+</html>

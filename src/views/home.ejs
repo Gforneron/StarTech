@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style_home.css" />
-<link rel="shortcut icon" href="/images/logo.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/images/logo.ico" type="image/x-icon">
   <script src="https://kit.fontawesome.com/e6313bd8bc.js" crossorigin="anonymous"></script>
   <title> Startech </title>
 </head>
@@ -16,44 +16,50 @@
 
   <%- include('./partials/header') %>
 
-  <main>
-    <h2>Basado en su ultima visita</h2>
+    <main>
+      <h2>Basado en su ultima visita</h2>
 
-    <section class="articulos" id="articulos">
-      <% productos_1.forEach(producto=> { %>
+      <section class="articulos" id="articulos">
+        <% for (let i=0; i < productos.length - 4; i++) { %>
           <div class="producto">
-            <img src="/images/<%= producto.imagen %>" alt="Imagen de Placa de Video">
-            <div class="descripcion" onclick="location.href= '/detalles/:<%= producto.id%>'">
+            <img src="/images/<%= productos[i].imagen %>" alt="Imagen de Placa de Video">
+            <div class="descripcion" onclick="location.href= '/detalles/:<%= productos[i].id%>'">
               <h4>
-                <%= producto.nombre %>
+                <%= productos[i].nombre %>
               </h4>
-              <p id="precios"></span>$<%= producto.precio %></p>
-              <p id="descuentos"><%= producto.descuento%>% OFF</p>
+              <p id="precios"></span>$<%= productos[i].precio %>
+              </p>
+              <p id="descuentos">
+                <%= productos[i].descuento%>% OFF
+              </p>
               <p id="envio">Envio Gratis</p>
             </div>
           </div>
-          <% }) %>
-    </section>
+          <% } %>
+      </section>
 
-    <h2>Ofertas destacadas</h2>
-    <section class="ofertas" id="ofertas">
-      <% productos_2.forEach(producto=> { %>
-        <div class="producto">
-          <img src="/images/<%= producto.imagen %>" alt="Imagen de Placa de Video">
-          <div class="descripcion" onclick="location.href= '/detalles/:<%= producto.id%>'">
-            <h4>
-              <%= producto.nombre %>
-            </h4>
-            <p id="precios"></span>$<%= producto.precio %></p>
-            <p id="descuentos"><%= producto.descuento%>% OFF</p>
-            <p id="envio">Envio Gratis</p>
+      <h2>Ofertas destacadas</h2>
+      <section class="ofertas" id="ofertas">
+        <% for (let i=4; i < productos.length; i++) { %>
+          <div class="producto">
+            <img src="/images/<%= productos[i].imagen %>" alt="Imagen de Placa de Video">
+            <div class="descripcion" onclick="location.href= '/detalles/:<%= productos[i].id%>'">
+              <h4>
+                <%= productos[i].nombre %>
+              </h4>
+              <p id="precios"></span>$<%= productos[i].precio %>
+              </p>
+              <p id="descuentos">
+                <%= productos[i].descuento%>% OFF
+              </p>
+              <p id="envio">Envio Gratis</p>
+            </div>
           </div>
-        </div>
-        <% }) %>
-    </section>
-  </main>
+          <% } %>
+      </section>
+    </main>
 
-  <%- include('./partials/footer') %>  
+    <%- include('./partials/footer') %>
 
 </body>
 
