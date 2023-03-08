@@ -1,0 +1,294 @@
+/* 
+    Configuracion del Header
+*/
+.main-header {
+    background-color: #1a1a1a;
+    padding: 0.3rem;
+    color: #fff;
+  }
+  .logo {
+    height: 6.25rem;
+    cursor: pointer;
+  }
+  .fa-solid,
+.fa-magnifying-glass {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+.main-navbar {
+  list-style: none;
+  margin: 0 0 1.875rem;
+  display: flex;
+  justify-content: space-around;
+}
+.main-navbar a, .navegacion a {
+  text-decoration: none;
+  color: whitesmoke;
+  display: inline-block;
+  padding: 0.3125rem 0;
+  font-size: 2vh;
+}
+.formulary {
+  text-align: right;
+  width: 50%;
+}
+.fa-magnifying-glass {
+  background-color: #dcdcdc;
+  border: 0.0625rem solid black;
+  padding: 0.5rem 0.375rem 0.875rem 0.625rem;
+  text-align: center;
+  font-size: 1.5625rem;
+}
+.fa-user, .fa-cart-shopping{
+  font-size: 30px;
+}
+.sombra:hover{
+  box-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+.contenedor_barra_de_busqueda {
+  width: 80%;
+  height: 3.125rem;
+  font-family: Roboto;
+}
+.main-header-top-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+body {
+    background: url("/images/fondo.jpg") no-repeat center top fixed;
+    background-size: cover;
+    font-family: Arial;
+    margin: 0;
+}
+nav {
+    margin-right: 15px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(26, 26, 26);
+}
+a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+form {
+    border-radius: 5px;
+    color: whitesmoke;
+    margin-top: 30px;
+    margin-left: 70px;
+    width: 70%;
+    padding: 10%;
+    background-color: rgb(26, 26, 26);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+h3 {
+    position: relative;
+    bottom: 6rem;
+    text-align: center;
+    font-size: 35px;
+}
+label {
+    width: 21%;
+}
+form input[type=text]:hover {
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;  border: solid 0px ;
+    color: whitesmoke;
+    background-color: rgb(82, 79, 79);
+}
+form input[type=text]:focus {
+    color: whitesmoke;
+    background-color: rgb(82, 79, 79);
+}
+textarea:hover {
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;  border: solid 0px ;
+    color: whitesmoke;
+    background-color: rgb(82, 79, 79);
+}
+textarea:focus {
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: linear; 
+    color: whitesmoke;
+    background-color: rgb(82, 79, 79);
+}
+textarea {
+    font-size: 17px;
+    border: solid 0px;
+    border-radius: 5px;
+    margin-top: 10px;
+    outline: none;
+    height: 5rem;
+    width: 30%;
+    margin-bottom: 10px;
+}
+form input[type=text]{
+    border-radius: 5px;
+    height: 28px;
+    outline: none;
+    border: solid 0px;
+    width: 45%;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.main-input {
+    position: relative;
+    bottom: 4rem;
+    display: flex;
+    font-size: 20px;
+    flex-direction: column;
+}
+.btn {
+    position: relative;
+    bottom: 10rem;
+    left: 39rem;
+    color: whitesmoke;
+    border-radius: 6px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 3px;
+    width: 30%;
+    border: dashed 2px rgb(54, 53, 53);    
+}
+.btn p {
+    text-align: center;
+}
+.btn input[type="file"]{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 2%;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;   
+}
+.btn:hover {
+    border: dashed 2px rgb(74, 73, 73);
+} 
+.btn p:hover {
+    color: rgb(74, 73, 73);
+}
+.menu {
+    position: relative;
+    left: 22%;
+    bottom: 5rem;
+    border-radius: 6px;
+    width: 50%;
+    padding: 30px;
+    background-color: black;
+    color: whitesmoke;
+}
+select {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: 7px;
+    position: relative;
+    bottom: 5rem;
+}
+select:hover {
+    transition: all 0.3s linear;
+    background-color: rgb(82, 80, 80);
+    color: whitesmoke;
+}
+#categoria {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.precio input{
+    outline: none;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+}
+.precio input:hover {
+    color: #dcdcdc;
+    transition: all 0.3s linear;
+    background-color: rgb(82, 80, 80);
+}
+.precio label{
+    font-size: 25px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+.precio {
+    position: relative;
+    bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+@media (max-width:700px) {
+    .form {
+        font-size: 5px;
+    }
+    h3 {
+        position: relative;
+        bottom: 3rem;
+        margin-bottom: 10%;
+        font-size: 19px;
+    }
+    .main-input {
+        width: 100%;
+        height: 100%;
+        padding-left: 60%;
+    }
+    #nombre {
+        width: 100%;
+    }
+    .main-input label {
+        text-align: center;
+        width: 100%;
+    }
+    .btn {
+        position: relative;
+        left: 5rem;
+        top: 1rem;
+        width: 60%;
+    }
+    .btn input[type="file"]{
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 100rem;
+        width: 100%;
+        height: 100%;   
+    }
+    textarea {
+        width: 100%;
+    }
+    .main-input {
+        font-size: 15px;
+        width: 100%;
+        padding: 2%;
+    }
+    select {
+        position: relative;
+        bottom: 2rem;
+    }
+    .precio {
+        margin-top: 30px;
+    }
+    .precio label{        
+        margin-bottom: 20px;
+        font-size: 17px;
+    }
+    
+}
