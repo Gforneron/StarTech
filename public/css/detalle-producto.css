@@ -265,3 +265,6 @@ a {
   color: whitesmoke;
   top: 1%;
 }
+@media (max-width:800px) {
+  
+}
