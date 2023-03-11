@@ -4,6 +4,18 @@ body {
   font-family: Arial;
   margin: 0;
 }
+body::-webkit-scrollbar {
+  width: 12px;
+  height: 90%;
+}
+body::-webkit-scrollbar-track {
+  background: rgb(26, 26, 26);
+}
+body::-webkit-scrollbar-thumb {
+  border: 2px solid rgb(26, 26, 26);
+  background-color: whitesmoke;
+  border-radius: 20px;
+}
 .main-header {
   background-color: #1a1a1a;
   padding: 0.3rem;
@@ -148,7 +160,8 @@ a {
 }
 #similares {
   text-align: center;
-  width: 100%;
+  width: 95%;
+  margin-left: 20px;
   color: whitesmoke;
   padding: 1%;
   border-radius: 5px;
@@ -218,8 +231,9 @@ a {
 }
 #reseñas {
   text-align: center;
-  width: 100%;
+  width: 95%;
   color: whitesmoke;
+  margin-left: 20px;
   padding: 1%;
   border-radius: 5px;
   background-color: rgb(26, 26, 26);
