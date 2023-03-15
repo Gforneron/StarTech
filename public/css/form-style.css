@@ -161,6 +161,9 @@ select:hover {
     flex-direction: column;
     width: 100%;
 }
+#boton{
+    margin-top: 20px;
+}
 
 @media (max-width:700px) {
     .form {

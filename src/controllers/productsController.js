@@ -1,4 +1,4 @@
-const mainController = {};
+const productController = {};
 let productos = [];
 
 productos.push(
@@ -63,9 +63,22 @@ productos.push(
     imagen: "Tablet-Lenovo.jpg",
   }
 );
-mainController.home = (req, res) => {
-  return res.render("home.ejs", { productos });
+
+productController.detalles = (req, res) => {
+  return res.render("detalle-producto", { productos });
+};
+productController.carrito = (req, res) => {
+  return res.render("productCart");
+};
+productController.form = (req, res) => {
+  return res.render("form-edit");
+};
+productController.charge = (req, res) => {
+  return res.render("form-charge");
+};
+productController.listado = (req, res) => {
+  return res.render("listado-producto", { productos });
 };
 
+module.exports = productController;
 
-module.exports = mainController;
