@@ -82,3 +82,26 @@ productController.listado = (req, res) => {
 
 module.exports = productController;
 
+// Listado de productos
+router.get("/products", productController.listado);
+
+// Formulario de creación de productos
+router.get("/products/create", productController.form);
+
+// Detalle de un producto particular
+router.get("/products/:id", productController.detalles);
+
+// Acción de creación (a donde se envía el formulario)
+router.post("/products", productController.create);
+
+// Formulario de edición de productos
+router.get("/products/:id/edit", productController.editForm);
+
+// Acción de edición (a donde se envía el formulario)
+router.put("/products/:id", productController.editAction);
+
+// Acción de borrado
+router.delete("/products/:id", productController.delete);
+
+module.exports = router;
+
