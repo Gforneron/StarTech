@@ -21,8 +21,7 @@
                 <% for (let i=0; i < productos.length; i++) { %>
                     <div class="producto">
                         <img src="/images/<%= productos[i].imagen %>" alt="Imagen de Placa de Video">
-                        <div class="descripcion" onclick="location.href= '/detalles/:<%= productos[i].id%>'">
-                            <h4>
+                        <div class="descripcion" onclick="location.href= '/productos/<%= productos[i].id%>'">                            <h4>
                                 <%= productos[i].nombre %>
                             </h4>
                             <p id="precios"></span>$<%= productos[i].precio %>
@@ -33,12 +32,12 @@
                             <p id="envio">Envio Gratis</p>
                         </div>
                         <input type="submit" id="boton_editar" value="editar producto"
-                            onclick="location.href= '/form-edit'">
+                            onclick="location.href= '/productos/<%= productos[i].id%>/edit'">
                     </div>
                     <% } %>
             </section>
             <br> <br>
-            <input type="submit" id="boton_agregar" value="Cargar producto" onclick="location.href= '/form-charge'">
+            <input type="submit" id="boton_agregar" value="Cargar producto" onclick="location.href= '/productos/create'">
         </main>
 
         <%- include('./partials/footer') %>

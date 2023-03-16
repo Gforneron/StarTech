@@ -24,7 +24,7 @@ app.listen(port, () => console.log("Corriendo servidor"));
 // Subir html
 
 app.use('/', mainRoutes)
-app.use('/', productsRoutes)
+app.use('/productos', productsRoutes)
 app.use('/', userRoutes)
 
 
