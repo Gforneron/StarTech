@@ -23,7 +23,7 @@
         <% for (let i=0; i < productos.length - 4; i++) { %>
           <div class="producto">
             <img src="/images/<%= productos[i].imagen %>" alt="Imagen de Placa de Video">
-            <div class="descripcion" onclick="location.href= '/detalles/:<%= productos[i].id%>'">
+            <div class="descripcion" onclick="location.href= '/productos/detalle/<%= productos[i].id%>'">
               <h4>
                 <%= productos[i].nombre %>
               </h4>
@@ -43,7 +43,7 @@
         <% for (let i=4; i < productos.length; i++) { %>
           <div class="producto">
             <img src="/images/<%= productos[i].imagen %>" alt="Imagen de Placa de Video">
-            <div class="descripcion" onclick="location.href= '/detalles/:<%= productos[i].id%>'">
+            <div class="descripcion" onclick="location.href= '/productos/detalle/<%= productos[i].id%>'">
               <h4>
                 <%= productos[i].nombre %>
               </h4>
