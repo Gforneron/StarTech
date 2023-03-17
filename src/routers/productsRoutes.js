@@ -32,4 +32,6 @@ router.get("/listado", productController.listado);
     // Falta hacer el controller pa
 // router.post("/products", productController.create);
 
+router.post("/productos/create", productController.newProduct);
+
 module.exports = router;

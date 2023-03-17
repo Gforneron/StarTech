@@ -33,4 +33,9 @@ productController.listado = (req, res) => {
   return res.render("listado-producto", { productos })
 }
 
+productController.newProduct = (req, res) => {
+  // con el req.body podemos tener los datos del fomrulario
+  return res.redirect("/productos/create");
+}
+
 module.exports = productController;

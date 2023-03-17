@@ -33,3 +33,7 @@ app.use('/', userRoutes)
 app.use((req, res, next) => {
     res.status(404).render("no-encontrado")
 })
+
+// transformar lo de formularios a objetos y json
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
