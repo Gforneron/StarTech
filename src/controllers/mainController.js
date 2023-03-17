@@ -1,7 +1,9 @@
 const mainController = {};
 const fs = require('fs');
-const productos = fs.readFileSync('../database/datos.json','utf-8');
-JSON.parse(productos);
+const path = require('path');
+
+const productsFilePath = path.join(__dirname, '../database/productos.json');
+const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 mainController.home = (req, res) => {
   return res.render("home.ejs", { productos });
