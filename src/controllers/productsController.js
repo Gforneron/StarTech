@@ -7,8 +7,15 @@ const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
 productController.detalles = (req, res) => {
-  return res.render("detalle-producto", { productos })
-}
+  const productId = req.params.id;
+  const product = productos.find(product => product.id === parseInt(productId));
+
+  if (!product) {
+    return res.status(404).render('no-encontrado');
+  }
+
+  res.render('detalle-producto', { product });
+};
 
 productController.carrito = (req, res) => {
   return res.render("productCart")

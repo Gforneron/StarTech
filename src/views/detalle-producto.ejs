@@ -17,18 +17,15 @@
 
     <main>
         <div class="">         
-            <img src="/images/Celular-Motorola.jpg" id="producto">
+            <img src="/images/<%= product.imagen%>" id="producto">
             <div class="descripcion">
-                <h3>Nombre del producto</h3>
-                <span class="fa-solid fa-dollar-sign"></span>
-                <p>Lorem ipsum dolor sit amet consectetur, 
-                adipisicing elit. Nesciunt veniam iste
-                accusantium ea ipsum illo molestias officiis </p>
-                <h3 id="detalles">Detalles del producto</h3>
+                <h3>Detalles del producto</h3>
+                <span class="fa-solid fa-dollar-sign"><%= product.precio%></span>
+                <p id="clase"><%= product.clase %> </p>
+                <h3  id="detalles"><%= product.nombre %></h3>
                 <p id="parrafo">
-                Lorem ipsum dolor sit amet consectetur, 
-                adipisicing elit. Nesciunt veniam iste
-                accusantium ea ipsum illo molestias officiis
+                Este producto posee un descuento del: <br>
+                <%= product.descuento %>%
                 </p>
             </div> 
             <h3 id="similares">Productos similares</h3>
