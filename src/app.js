@@ -16,7 +16,7 @@ app.use(express.static(publico));
 
 // Levantar servidor
 
-app.listen(port, () => console.log("Corriendo servidor"));
+app.listen(port, () => console.log("Corriendo servidor en: http://localhost:3000/"));
 
 // Subir html
 
