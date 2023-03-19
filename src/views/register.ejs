@@ -2,43 +2,37 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="shortcut icon" href="/img/logo.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/e6313bd8bc.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="/images/logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/css/register.css">
+    <%- include('./partials/head.ejs') %>
+        <title>Register</title>
+        <link rel="stylesheet" href="/css/register.css">
 </head>
 
 <body>
-    
-    <%- include('./partials/header') %>
-    
-    <main>
-        <div class="register">
-            <form action="" method="post">
-                <h3>Registrarse</h3>
-                <label for="Usuario">Nombre de Usuario</label>
-                <input type="text" name="Usuario" id="name">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password">
-                <label for="confirmed-pass">Confirmar Contraseña</label>
-                <input type="password" name="confirmed-pass" id="confirmed-pass">
-                <input type="submit" value="ENVIAR">
-                <div class="Bajo_formulario">
-                    <a href="">Olvido su Contraseña?</a>
-                    <a href="/login">Ingresar</a>
-                </div>
-            </form>
-        </div>
-    </main>
 
-    <%- include('./partials/footer') %>  
+    <%- include('./partials/header') %>
+
+        <main>
+            <div class="register">
+                <form action="" method="post">
+                    <h3>Registrarse</h3>
+                    <label for="Usuario">Nombre de Usuario</label>
+                    <input type="text" name="Usuario" id="name">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+                    <label for="confirmed-pass">Confirmar Contraseña</label>
+                    <input type="password" name="confirmed-pass" id="confirmed-pass">
+                    <input type="submit" value="ENVIAR">
+                    <div class="Bajo_formulario">
+                        <a href="">Olvido su Contraseña?</a>
+                        <a href="/login">Ingresar</a>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <%- include('./partials/footer') %>
 
 </body>
 

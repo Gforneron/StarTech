@@ -2,14 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado</title>
-    <link rel="shortcut icon" href="/images/logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/css/style-listado.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/e6313bd8bc.js" crossorigin="anonymous"></script>
+    <%- include('./partials/head.ejs') %>
+        <title>Listado</title>
+        <link rel="stylesheet" href="/css/style-listado.css" />
+        <script src="https://kit.fontawesome.com/e6313bd8bc.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -21,7 +17,8 @@
                 <% for (let i=0; i < productos.length; i++) { %>
                     <div class="producto">
                         <img src="/images/<%= productos[i].imagen %>" alt="Imagen de Placa de Video">
-                        <div class="descripcion" onclick="location.href= '/productos/<%= productos[i].id%>'">                            <h4>
+                        <div class="descripcion" onclick="location.href= '/productos/<%= productos[i].id%>'">
+                            <h4>
                                 <%= productos[i].nombre %>
                             </h4>
                             <p id="precios"></span>$<%= productos[i].precio %>
@@ -37,7 +34,8 @@
                     <% } %>
             </section>
             <br> <br>
-            <input type="submit" id="boton_agregar" value="Cargar producto" onclick="location.href= '/productos/create'">
+            <input type="submit" id="boton_agregar" value="Cargar producto"
+                onclick="location.href= '/productos/create'">
         </main>
 
         <%- include('./partials/footer') %>

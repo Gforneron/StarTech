@@ -1,54 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalles</title>
-    <link rel="stylesheet" href="/css/detalle-producto.css">
-    <link rel="shortcut icon" href="/images/logo.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/e6313bd8bc.js" crossorigin="anonymous"></script>
+    <%- include('./partials/head.ejs') %>
+        <title>Detalles</title>
+        <link rel="stylesheet" href="/css/detalle-producto.css">
 </head>
+
 <body>
 
 
     <%- include('./partials/header') %>
 
-    <main>
-        <div class="">         
-            <img src="/images/<%= product.imagen%>" id="producto">
-            <div class="descripcion">
-                <h3>Detalles del producto</h3>
-                <span class="fa-solid fa-dollar-sign"><%= product.precio%></span>
-                <p id="clase"><%= product.clase %> </p>
-                <h3  id="detalles"><%= product.nombre %></h3>
-                <p id="parrafo">
-                Este producto posee un descuento del: <br>
-                <%= product.descuento %>%
-                </p>
-            </div> 
-            <h3 id="similares">Productos similares</h3>
-            <div class="productos-similares">
-                <img src="/images/Celular-Samsung.jpg">
-                <div class="descripcion-producto">
-                    <p>Celular Samsung A03</p>
-                    <p>$600 US</p>
-                    <p>Envio Gratis</p>
+        <main>
+            <div class="">
+                <img src="/images/<%= product.imagen%>" id="producto">
+                <div class="descripcion">
+                    <h3>Detalles del producto</h3>
+                    <span class="fa-solid fa-dollar-sign">
+                        <%= product.precio%>
+                    </span>
+                    <p id="clase">
+                        <%= product.clase %>
+                    </p>
+                    <h3 id="detalles">
+                        <%= product.nombre %>
+                    </h3>
+                    <p id="parrafo">
+                        Este producto posee un descuento del: <br>
+                        <%= product.descuento %>%
+                    </p>
+                </div>
+                <h3 id="similares">Productos similares</h3>
+                <div class="productos-similares">
+                    <img src="/images/Celular-Samsung.jpg">
+                    <div class="descripcion-producto">
+                        <p>Celular Samsung A03</p>
+                        <p>$600 US</p>
+                        <p>Envio Gratis</p>
+                    </div>
+                </div>
+                <div class="reseñas">
+                    <h3 id="reseñas">Opiniones y reseñas</h3>
+                    <h3 id="comentarios">Comentarios</h3>
+                    <div class="comentarios">
+                        <span class="fa-solid fa-user user"></span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta vero iste harum blanditiis
+                            consequatur placeat, qui sunt beatae delectus. Adipisci mollitia autem in velit rem officiis
+                            dignissimos ut voluptatum maiores.</p>
+                    </div>
                 </div>
             </div>
-            <div class="reseñas">
-                <h3 id="reseñas">Opiniones y reseñas</h3>
-                <h3 id="comentarios">Comentarios</h3>
-                <div class="comentarios">
-                    <span class="fa-solid fa-user user"></span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta vero iste harum blanditiis consequatur placeat, qui sunt beatae delectus. Adipisci mollitia autem in velit rem officiis dignissimos ut voluptatum maiores.</p>
-                </div>
-            </div>
-        </div>
-    </main>
+        </main>
 
-    <%- include('./partials/footer') %>  
+        <%- include('./partials/footer') %>
 
 </body>
+
 </html>

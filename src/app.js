@@ -3,9 +3,6 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const port = process.env.port || 3000;
-const mainRoutes = require('./routers/mainRoutes.js');
-const productsRoutes = require('./routers/productsRoutes.js');
-const userRoutes = require('./routers/userRoutes');
 
 // Declaracion EJS
 
@@ -23,9 +20,9 @@ app.listen(port, () => console.log("Corriendo servidor"));
 
 // Subir html
 
-app.use('/', mainRoutes)
-app.use('/productos', productsRoutes)
-app.use('/', userRoutes)
+app.use('/', require('./routers/mainRoutes.js'))
+app.use('/productos', require('./routers/productsRoutes.js'))
+app.use('/usuarios', require('./routers/userRoutes'));
 
 
 // error 404
