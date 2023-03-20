@@ -28,7 +28,7 @@ app.use('/usuarios', require('./routers/userRoutes'));
 // error 404
 
 app.use((req, res, next) => {
-    res.status(404).render("no-encontrado")
+    res.status(404).render("main/no-encontrado")
 })
 
 // transformar lo de formularios a objetos y json

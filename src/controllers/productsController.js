@@ -11,26 +11,26 @@ productController.detalles = (req, res) => {
   const product = productos.find(product => product.id === parseInt(productId));
 
   if (!product) {
-    return res.status(404).render('no-encontrado');
+    return res.status(404).render('main/no-encontrado');
   }
 
-  res.render('detalle-producto', { product });
+  res.render('products/detalle-producto', { product });
 };
 
 productController.carrito = (req, res) => {
-  return res.render("productCart")
+  return res.render("main/productCart")
 }
 
 productController.edit = (req, res) => {
-  return res.render("form-edit")
+  return res.render("products/form-edit")
 }
 
 productController.create = (req, res) => {
-  return res.render("form-charge")
+  return res.render("products/form-charge")
 }
 
 productController.listado = (req, res) => {
-  return res.render("listado-producto", { productos })
+  return res.render("products/listado-producto", { productos })
 }
 
 productController.newProduct = (req, res) => {
