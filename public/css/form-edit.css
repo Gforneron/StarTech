@@ -25,6 +25,7 @@ label {
 }
 
 input {
+    text-align: center;
     border-radius: 5px;
     font-size: 20px;
     outline: none;

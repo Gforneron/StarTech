@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const productController = require("../controllers/productsController.js");
+router.use(express.urlencoded({ extended: false }));
 
 
 // Detalle de un producto particular
@@ -11,6 +12,8 @@ router.get("/carrito", productController.carrito);
 
 // Formulario de edición de productos
 router.get("/:id/edit", productController.edit);
+router.put("/:id/edit", productController.editar);
+
 
 // Formulario de creación de productos
 router.get("/create", productController.create);
@@ -32,6 +35,6 @@ router.get("/listado", productController.listado);
     // Falta hacer el controller pa
 // router.post("/products", productController.create);
 
-router.post("/productos/create", productController.newProduct);
+router.post("/create", productController.newProduct);
 
 module.exports = router;
