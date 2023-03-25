@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <%- include('../partials/head.ejs') %>
-        <title>Edit Products</title>
-        <link rel="stylesheet" href="/css/form-style.css">
-</head>
+<%- include('../partials/head.ejs') %>
+<title>Charge Products</title>
+<link rel="stylesheet" href="/css/form-style.css">
 
 <body>
     <header>
         <%- include('../partials/header.ejs') %>
     </header>
     </main>
-    <form action="" method="post" class="main-form">
+    <!-- conectar el formulario al controller -->
+    <form action="/productos/create" method="POST" class="main-form">
         </div class="form">
         <h3 id="titulo">Formulario de carga del producto</h3>
         <div class="main-input">
             <label for="nombre">Nombre del Producto</label>
             <input type="text" name="nombre" id="nombre">
-            <label for="descripcion">Descripcion</label>
-            <textarea name="descripcion" id="descripcion" cols="30" rows="">
-                    </textarea>
+            <div class="descuento">
+                <label for="descuento">Descuento</label>
+                <input type="number" name="descuento" id="descuento" cols="30" rows=""/>
+            </div>
             <div class="btn">
                 <p>Ingrese una imagen</p>
-                <input type="file" name="archivo" class="archivo" />
+                <input type="file" name="imagen" class="imagen" />
             </div>
         </div>
         <h3 id="titulo">Categoria</h3>
-        <select name="categoria">
+        <select name="clase">
             <option value="">Electrodomesticos</option>
             <option value="">Lavado</option>
             <option value="">Tv y audio</option>

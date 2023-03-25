@@ -43,8 +43,23 @@ productController.listado = (req, res) => {
 };
 
 productController.newProduct = (req, res) => {
-  // con el req.body podemos tener los datos del fomrulario
-  return res.redirect("/productos/create");
+  // sacamos los datos del formulario con req.body
+  let newProductData = {
+    nombre: req.body.nombre,
+    descuento: req.body.descuento,
+    imagen: req.body.imagen,
+    clase: req.body.clase,
+    precio: req.body.precio,
+  }
+  let newId = productos.length + 1;
+  // usamos el spreed operator y lo juntamos en un objeto
+  let newProduct = {...newProductData,id: newId};
+  // agregamos el nuevo producto a la lista
+  productos.push(newProduct)
+  // guardamos los cambios en el archivo json
+  fs.writeFileSync(productsFilePath,JSON.stringify(productos,null,2),'utf-8');
+  // por ultimo redireccionamos al listado para la vista
+  return res.redirect("/productos/listado");
 };
 
 productController.editar = (req, res) => {
@@ -69,7 +84,7 @@ productController.editar = (req, res) => {
     JSON.stringify(productos, null, 2),
     "utf-8"
   );
-
+  
   // Redireccionar a la página de detalles del producto actualizado
   return res.redirect('/productos/listado');
 };
