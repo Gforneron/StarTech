@@ -1,4 +1,5 @@
 // LLamadas de Librerias
+const multer = require('multer');
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -37,3 +38,15 @@ app.use((req, res, next) => {
 // transformar lo de formularios a objetos y json
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+
+// Inplementacion de Multer
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'public/images')
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + file.originalname)
+    }
+})
+const upload = multer({storage: storage})
