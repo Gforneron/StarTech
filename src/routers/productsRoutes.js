@@ -23,7 +23,7 @@ router.get("/carrito", productController.carrito);
 
 // Formulario de edición de productos
 router.get("/:id/edit", productController.edit);
-router.put("/:id/edit", productController.editar);
+router.put("/:id/edit", upload.single('imagen'),productController.editar);
 
 // formulario de eliminación de productos
 router.get("/:id/delete",productController.delete)
@@ -34,20 +34,6 @@ router.get("/create", productController.create);
 
 // Listado de productos
 router.get("/listado", productController.listado);
-
-// Acción de edición (a donde se envía el formulario)
-
-    // Falta hacer el controller pa
-// router.put("/products/:id", productController.editAction);
-
-// Acción de borrado
-
-    // Falta hacer el controller pa
-// router.delete("/products/:id", productController.delete);
-
-// Acción de creación (a donde se envía el formulario)
-    // Falta hacer el controller pa
-// router.post("/products", productController.create);
 
 router.post("/create", upload.single('imagen'),productController.newProduct);
 

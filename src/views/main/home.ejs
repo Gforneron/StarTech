@@ -52,6 +52,11 @@
           </div>
           <% } %>
       </section>
+
+        <!-- Este boton es para acceder al listado, cuando esten los usuarios y todo
+        hacemos que solo sea visible para usuarios admin -->
+      <input type="submit" id="boton_agregar" value="listado de producto"
+      onclick="location.href= '/productos/Listado'">
     </main>
 
     <%- include('../partials/footer') %>

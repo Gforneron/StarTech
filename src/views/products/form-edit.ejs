@@ -10,7 +10,7 @@
 <body>
     <%- include('../partials/header') %>
         <main>
-            <form method="POST" action="/productos/<%= product.id %>/edit?_method=PUT" >
+            <form method="POST" action="/productos/<%= product.id %>/edit?_method=PUT" enctype="multipart/form-data">
                 <div class="form">
                     <h3>Formulario de Edicion</h3>
                     <label for="nombre">Nombre</label>
@@ -19,16 +19,17 @@
                     <textarea name="descuento"><%= product.descuento %></textarea>
                     <div class="btn">
                         <p>Ingrese una imagen</p>
-                        <input type="file" name="archivo" class="archivo" />
+                        <input type="file" name="imagen" class="imagen" />
                     </div>
                     <h3>Categoria</h3>
-                    <select form="clase" name="clase">
-                        <option>
+                    <select name="clase">
+                        <option value="<%= product.clase %>">
                             <%= product.clase %>
                         </option>
-                        <option>Electrodomesticos</option>
-                        <option>Tegnologia</option>
-                        <option>Tv y audio</option>
+                        <option value="electrodomesticos">Electrodomesticos</option>
+                        <option value="lavado">Lavado</option>
+                        <option value="tv_y_audio">Tv y audio</option>
+                        <option value="congeladores">Congeladores</option>
                     </select>
                     <h3>Precio</h3>
                     <input type="number" name="precio" id="precio" value="<%= product.precio%>">
