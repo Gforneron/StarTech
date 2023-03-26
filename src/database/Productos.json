@@ -60,6 +60,7 @@
     "nombre": "Tablet Lenovo",
     "precio": "78.976",
     "descuento": "15",
-    "imagen": "Tablet-Lenovo.jpg"
+    "imagen": "Tablet-Lenovo.jpg",
+    "clase": "tablet"
   }
 ]
