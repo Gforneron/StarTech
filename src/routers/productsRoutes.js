@@ -25,6 +25,9 @@ router.get("/carrito", productController.carrito);
 router.get("/:id/edit", productController.edit);
 router.put("/:id/edit", productController.editar);
 
+// formulario de eliminación de productos
+router.get("/:id/delete",productController.delete)
+router.delete('/:id/delete',productController.eliminar)
 
 // Formulario de creación de productos
 router.get("/create", productController.create);

@@ -7,6 +7,10 @@ const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 productController.detalles = (req, res) => {
   const productId = req.params.id;
+  // Para la recomendacion de productos segun la clase 
+  let producto = productos.find(product => product.id === parseInt(productId));
+  let similar = productos.filter(product => product.clase === producto.clase && product.id !== producto.id);
+  
   const product = productos.find(
     (product) => product.id === parseInt(productId)
   );
@@ -14,14 +18,20 @@ productController.detalles = (req, res) => {
   if (!product) {
     return res.status(404).render("main/no-encontrado");
   }
-
-  res.render("products/detalle-producto", { product });
+  
+  res.render("products/detalle-producto", { product ,productoOriginal: producto, productosSimilar: similar});
 };
 
 productController.carrito = (req, res) => {
   return res.render("main/productCart");
 };
 
+productController.delete = (req,res) => {
+  return res.render('products/form-delete')
+}
+productController.eliminar = (req,res) => {
+
+}
 productController.edit = (req, res) => {
   const productId = req.params.id;
   const product = productos.find(
