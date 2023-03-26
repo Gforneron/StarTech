@@ -47,7 +47,7 @@ productController.newProduct = (req, res) => {
   let newProductData = {
     nombre: req.body.nombre,
     descuento: req.body.descuento,
-    imagen: req.body.imagen,
+    imagen: req.file.filename,
     clase: req.body.clase,
     precio: req.body.precio,
   }
