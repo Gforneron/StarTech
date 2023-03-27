@@ -14,7 +14,7 @@
 
         <main>
             <div class="main">
-                <img src="/images/<%= product.imagen%>" id="producto">
+                <img src="/images/productos/<%= product.imagen%>" id="producto">
                 <div class="descripcion">
                     <h3>Detalles del producto</h3>
                     <span class="fa-solid fa-dollar-sign">
@@ -34,7 +34,7 @@
                 <h3 id="similares">Productos similares</h3>
                 <div class="productos-similares">
                     <% productosSimilar.forEach(similares => { %>
-                        <img src="/images/<%= similares.imagen %>">
+                        <img src="/images/productos/<%= similares.imagen %>">
                         <div class="descripcion-producto">
                             <p><%= similares.nombre %></p>
                             <p><%= similares.clase  %></p>

@@ -21,53 +21,33 @@
       <div class="productos">
         <h2>Productos en el carrito</h2>
         <ul class="lista-productos">
-          <li class="producto">
-            <img src="\images\img-cafetera-moulinex.jpg" alt="Imagen del producto 1">
-            <div class="info-producto">
-              <h3>Producto 1</h3>
-              <p>Precio: $20</p>
-              <div class="contador">
-                <button class="decremento">-</button>
-                <span class="num">1</span>
-                <button class="incremento">+</button>
+          <% for (let i=0; i < productos.length - 5; i++) { %>
+            <li class="producto">
+              <img src="/images/productos/<%= productos[i].imagen %>" alt="Imagen de <%= productos[i].nombre %>">
+              <div class="info-producto">
+                <h3>
+                  <%= productos[i].nombre %>
+                </h3>
+                <p>Precio: $<%= productos[i].precio %>
+                </p>
+                <div class="contador">
+                  <button class="decremento">-</button>
+                  <span class="num">1</span>
+                  <button class="incremento" onclick="">+</button>
+                </div>
               </div>
-            </div>
-            <span class="fa-solid fa-trash-can"></span>
-          </li>
-          <li class="producto">
-            <img src="\images\img-cafetera-moulinex.jpg" alt="Imagen del producto 2">
-            <div class="info-producto">
-              <h3>Producto 1</h3>
-              <p>Precio: $20</p>
-              <div class="contador">
-                <button class="decremento">-</button>
-                <span class="num">1</span>
-                <button class="incremento">+</button>
-              </div>
-            </div>
-            <span class="fa-solid fa-trash-can"></span>
-          </li>
-          <li class="producto">
-            <img src="images\img-cafetera-moulinex.jpg" alt="Imagen del producto 3">
-            <div class="info-producto">
-              <h3>Producto 1</h3>
-              <p>Precio: $20</p>
-              <div class="contador">
-                <button class="decremento">-</button>
-                <span class="num">1</span>
-                <button class="incremento">+</button>
-              </div>
-            </div>
-            <span class="fa-solid fa-trash-can"></span>
-          </li>
-
+              <span class="fa-solid fa-trash-can"></span>
+            </li>
+            <% } %>
         </ul>
       </div>
+
       <div class="cart-summary">
         <h2>Resumen de la compra</h2>
         <p>Subtotal: $100</p>
         <p>Total: $120</p>
         <button>Proceder al pago</button>
+
       </div>
     </div>
 

@@ -23,7 +23,7 @@ productController.detalles = (req, res) => {
 };
 
 productController.carrito = (req, res) => {
-  return res.render("main/productCart");
+  return res.render("main/productCart", {productos});
 };
 
 productController.delete = (req,res) => {

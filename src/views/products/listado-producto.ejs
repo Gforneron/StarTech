@@ -16,7 +16,7 @@
             <section class="articulos" id="articulos">
                 <% for (let i=0; i < productos.length; i++) { %>
                     <div class="producto">
-                        <img src="/images/<%= productos[i].imagen %>" alt="Imagen de Placa de Video">
+                        <img src="/images/productos/<%= productos[i].imagen %>" alt="Imagen de Placa de Video">
                         <div class="descripcion" onclick="location.href= '/productos/<%= productos[i].id%>'">
                             <h4>
                                 <%= productos[i].nombre %>

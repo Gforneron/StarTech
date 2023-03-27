@@ -7,10 +7,10 @@ router.use(express.urlencoded({ extended: false }));
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'public/images')
+        cb(null, 'public/images/productos')
     },
     filename: (req, file, cb) => {
-        cb(null, file.originalname + '-' + Date.now() + '.' + 'jpg')
+        cb(null, file.fieldname + '-' + Date.now())
     }
 })
 const upload = multer({storage: storage})
