@@ -26,8 +26,7 @@ router.get("/:id/edit", productController.edit);
 router.put("/:id/edit", upload.single('imagen'),productController.editar);
 
 // formulario de eliminación de productos
-router.get("/:id/delete",productController.delete)
-router.delete('/:id/delete',productController.eliminar)
+router.get("/delete/:id",productController.delete)
 
 // Formulario de creación de productos
 router.get("/create", productController.create);

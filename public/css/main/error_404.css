@@ -1,0 +1,20 @@
+body {
+    background-color: #ECE4E4;
+}
+
+.titulo {
+    color: rgba(236, 62, 62, 0.7);
+    font-family: Arial;
+    position: relative;
+    font-size: 50px;
+    top: 7rem;
+    text-align: center;
+}
+
+p {
+    position: relative;
+    top: 5rem;
+    font-family: Arial;
+    font-size: 20px;
+    text-align: center;
+}
