@@ -146,6 +146,20 @@ main input {
   cursor: pointer;
 }
 
+.boton_delete {
+  display: inline-block;
+  color: #FFF;
+  font-size: 2em;
+  text-decoration: none;
+}
+
+.boton_delete:hover {
+  font-size: 2.7em;
+}
+
+.boton_delete:visited {
+  color: #FFF;
+}
 @media (min-width: 720px) {
   .producto {
     width: 15rem;

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs') %>
+<title>Charge Products</title>
+<link rel="stylesheet" href="/css/productos/form-style.css">
+
+<body>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+    </main>
+    <!-- conectar el formulario al controller -->
+    <form action="/productos/create" method="POST" class="main-form" enctype="multipart/form-data">
+        </div class="form">
+        <h3 id="titulo">Formulario de carga del producto</h3>
+        <div class="main-input">
+            <label for="nombre">Nombre del Producto</label>
+            <input type="text" name="nombre" id="nombre">
+            <div class="descuento">
+                <label for="descuento">Descuento</label>
+                <input type="number" name="descuento" id="descuento" cols="30" rows=""/>
+            </div>
+            <div class="btn">
+                <p>Ingrese una imagen</p>
+                <input type="file" name="imagen" class="imagen" />
+            </div>
+        </div>
+        <h3 id="titulo">Categoria</h3>
+        <select name="clase">
+            <option value="electrodomesticos">Electrodomesticos</option>
+            <option value="lavado">Lavado</option>
+            <option value="tv_y_audio">Tv y audio</option>
+            <option value="congeladores">Congeladores</option>
+        </select>
+        </div>
+        <div class="precio">
+            <label for="precio">Precio</label>
+            <input type="number" name="precio" id="precio">
+            <input type="submit" name="boton" value="Enviar" id="boton">
+        </div>
+    </form>
+    <main>
+        <footer>
+            <%- include('../partials/footer.ejs') %>
+        </footer>
+</body>
+
+</html>

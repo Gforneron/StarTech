@@ -3,6 +3,9 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const port = process.env.port || 3000;
+const methodOverride = require('method-override');
+app.use(methodOverride ("_method"));
+
 
 // Declaracion EJS
 
@@ -28,7 +31,7 @@ app.use('/usuarios', require('./routers/userRoutes'));
 // error 404
 
 app.use((req, res, next) => {
-    res.status(404).render("no-encontrado")
+    res.status(404).render("main/no-encontrado")
 })
 
 // transformar lo de formularios a objetos y json

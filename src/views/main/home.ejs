@@ -2,14 +2,12 @@
 <html lang="en">
 
 <head>
-  <%- include('./partials/head.ejs') %>
-    <link rel="stylesheet" href="/css/style_home.css" />
+  <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/main/style_home.css" />
     <title> Startech </title>
 </head>
-
 <body>
-
-  <%- include('./partials/header') %>
+  <%- include('../partials/header') %>
 
     <main>
       <h2>Basado en su ultima visita</h2>
@@ -17,7 +15,7 @@
       <section class="articulos" id="articulos">
         <% for (let i=0; i < productos.length - 4; i++) { %>
           <div class="producto">
-            <img src="/images/<%= productos[i].imagen %>" alt="Imagen de Placa de Video">
+            <img src="/images/productos/<%= productos[i].imagen %>" alt="Imagen de <%= productos[i].nombre %>">
             <div class="descripcion" onclick="location.href= '/productos/detalle/<%= productos[i].id%>'">
               <h4>
                 <%= productos[i].nombre %>
@@ -37,7 +35,7 @@
       <section class="ofertas" id="ofertas">
         <% for (let i=4; i < productos.length; i++) { %>
           <div class="producto">
-            <img src="/images/<%= productos[i].imagen %>" alt="Imagen de Placa de Video">
+            <img src="/images/productos/<%= productos[i].imagen %>" alt="Imagen de <%= productos[i].nombre %>">
             <div class="descripcion" onclick="location.href= '/productos/detalle/<%= productos[i].id%>'">
               <h4>
                 <%= productos[i].nombre %>
@@ -52,9 +50,13 @@
           </div>
           <% } %>
       </section>
+
+      <!-- Este boton es para acceder al listado, cuando esten los usuarios y todo
+        hacemos que solo sea visible para usuarios admin -->
+      <input type="submit" id="boton_agregar" value="listado de producto" onclick="location.href= '/productos/Listado'">
     </main>
 
-    <%- include('./partials/footer') %>
+    <%- include('../partials/footer') %>
 
 </body>
 

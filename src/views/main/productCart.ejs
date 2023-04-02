@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head.ejs') %>
+    <title>Detalles</title>
+    <title>Carrito De Compras</title>
+    <link rel="stylesheet" href="/css/productos/styles-cart.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet">
+</head>
+
+<body>
+
+  <%- include('../partials/header') %>
+
+    <div class="carrito-compras">
+      <div class="productos">
+        <h2>Productos en el carrito</h2>
+        <ul class="lista-productos">
+          <% for (let i=0; i < productos.length - 5; i++) { %>
+            <li class="producto">
+              <img src="/images/productos/<%= productos[i].imagen %>" alt="Imagen de <%= productos[i].nombre %>">
+              <div class="info-producto">
+                <h3>
+                  <%= productos[i].nombre %>
+                </h3>
+                <p>Precio: $<%= productos[i].precio %>
+                </p>
+                <div class="contador">
+                  <button class="decremento">-</button>
+                  <span class="num">1</span>
+                  <button class="incremento" onclick="">+</button>
+                </div>
+              </div>
+              <span class="fa-solid fa-trash-can"></span>
+            </li>
+            <% } %>
+        </ul>
+      </div>
+
+      <div class="cart-summary">
+        <h2>Resumen de la compra</h2>
+        <p>Subtotal: $100</p>
+        <p>Total: $120</p>
+        <button>Proceder al pago</button>
+
+      </div>
+    </div>
+
+    <%- include('../partials/footer') %>
+
+</body>
+
+</html>

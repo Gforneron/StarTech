@@ -1,1 +1,7 @@
-node_modules
+node_modules/
+design/
+package-lock.json
+package.json
+.env
+README.md
+retro.md

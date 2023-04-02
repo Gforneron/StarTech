@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-    <%- include('./partials/head.ejs') %>
-        <link rel="stylesheet" href="css/login.css">
+    <%- include('../partials/head.ejs') %>
+        <link rel="stylesheet" href="/css/users/login.css">
         <title>Login</title>
 </head>
 
 <body>
 
-    <%- include('./partials/header') %>
+    <%- include('../partials/header') %>
 
         <main>
             <div class="login">
@@ -24,12 +24,12 @@
                     <!-- Boton -->
                     <input type="submit" value="Enviar">
                     <a href="">Has perdido tu contraseña?</a>
-                    <a href="/register">No tienes cuenta?</a>
+                    <a href="/usuarios/register">No tienes cuenta?</a>
                 </form>
             </div>
         </main>
 
-        <%- include('./partials/footer') %>
+        <%- include('../partials/footer') %>
 
 </body>
 
