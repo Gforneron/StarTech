@@ -6,5 +6,7 @@ userController.register = (req, res) => {
 userController.login = (req, res) => {
   return res.render("login");
 };
-
+userController.perfil = (req, res) => {
+  return res.render("perfil");
+};
 module.exports = userController;
