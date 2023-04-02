@@ -7,6 +7,6 @@ userController.login = (req, res) => {
   return res.render("users/login");
 };
 userController.perfil = (req, res) => {
-  return res.render("perfil");
+  return res.render("users/perfil");
 };
 module.exports = userController;
