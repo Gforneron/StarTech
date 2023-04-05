@@ -18,9 +18,12 @@
                     <!-- Username  -->
                     <label for="username">Username</label>
                     <input type="text" name="username" id="username" placeholder="Username">
+                    <% if (locals.errors && errors.name) { %>
+                        <p class="feedback"><%= errors.name %></p>
+                   <% } %>
                     <!-- Password -->
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" placeholder="Password">
+                    <input type="password" name="password" id="password" value="<% locals.old && old.email %>">
                     <!-- Boton -->
                     <input type="submit" value="Enviar">
                     <a href="">Has perdido tu contraseña?</a>

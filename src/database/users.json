@@ -1,29 +1,26 @@
 [
-  {
-    "id": 1,
-    "firstName": "Juan",
-    "lastName": "Pérez",
-    "email": "juanperez@ejemplo.com",
-    "password": "secreto123",
-    "category": "admin",
-    "image": "https://ejemplo.com/images/juanperez.jpg"
-  },
-  {
-    "id": 2,
-    "firstName": "María",
-    "lastName": "García",
-    "email": "mariagarcia@ejemplo.com",
-    "password": "clave123",
-    "category": "user",
-    "image": "https://ejemplo.com/images/mariagarcia.jpg"
-  },
-  {
-    "id": 3,
-    "firstName": "Luis",
-    "lastName": "Martínez",
-    "email": "luismartinez@ejemplo.com",
-    "password": "password123",
-    "category": "user",
-    "image": "https://ejemplo.com/images/luismartinez.jpg"
-  }
+    {
+        "id": 1,
+        "firstName": "Juan",
+        "lastName": "Pérez",
+        "email": "juanperez@ejemplo.com",
+        "password": "secreto123",
+        "category": "admin"
+    },
+    {
+        "id": 2,
+        "firstName": "María",
+        "lastName": "García",
+        "email": "mariagarcia@ejemplo.com",
+        "password": "clave123",
+        "category": "user"
+    },
+    {
+        "id": 3,
+        "firstName": "Luis",
+        "lastName": "Martínez",
+        "email": "luismartinez@ejemplo.com",
+        "password": "password123",
+        "category": "user"
+    }
 ]
