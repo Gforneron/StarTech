@@ -1,1 +1,26 @@
-[{"id":1,"firstName":"Juan","lastName":"Pérez","email":"juanperez@ejemplo.com","password":"secreto123","category":"admin"},{"id":2,"firstName":"María","lastName":"García","email":"mariagarcia@ejemplo.com","password":"clave123","category":"user"},{"id":3,"firstName":"Luis","lastName":"Martínez","email":"luismartinez@ejemplo.com","password":"password123","category":"user"},{"id":4,"username":"maximovelasquez_15","password":"$2a$08$9c1MTQ1FoTsbV7IQKgj8g.pyYmGwOJQdQVUbTTon7/JKEKOmHY8kO","email":"tohefo3556@ngopy.com","confirmed":"$2a$08$0IjRbJoL1na.KLtBj60VieRo55c5EZYjv5JOUVMBVFAbMXpqQ0hBW"},{"id":5,"username":"maxi123","password":"$2a$08$SbgccnFUyZLmmLIXiCnk6eXl0iRgxB2qK9s5GirBB4wl59MycNhG6","email":"dasda@gmail.com","confirmed":"$2a$08$DDosrxYG0jYau6kqrAA2be2L8ByfbJZoAzv64jblyAeTWJ8DAYuba"},{"id":6,"username":"maximo","password":"$2a$08$EIf03YK.0LzdQMPawKryQuKy.tEULTOqS.KrdvbyxHR9q6k3S.GF6","email":"dasda@gmail.com","confirmed":"$2a$08$2DyKgbPsDu6TXWA2XezVCOKSLm15yIYnvMhUOId/3ZmJxY8ti6syi"},{"id":7,"username":"maximo","password":"$2a$08$CS4B80lE4vN9Enp4vPugHuHOAduLnZOZX0hWuO6LTzAvK2VPDs6M6","email":"dasda@gmail.com","confirmed":"$2a$08$x.v5F.AmWcBCIDlB5oqrcOGWc1WlSKatovTHOvQ0ArmSfdNA2JDk."}]
+[
+    {
+        "id": 1,
+        "firstName": "Juan",
+        "lastName": "Pérez",
+        "email": "juanperez@ejemplo.com",
+        "password": "secreto123",
+        "category": "admin"
+    },
+    {
+        "id": 2,
+        "firstName": "María",
+        "lastName": "García",
+        "email": "mariagarcia@ejemplo.com",
+        "password": "clave123",
+        "category": "user"
+    },
+    {
+        "id": 3,
+        "firstName": "Luis",
+        "lastName": "Martínez",
+        "email": "luismartinez@ejemplo.com",
+        "password": "password123",
+        "category": "user"
+    }
+]
