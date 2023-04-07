@@ -13,7 +13,7 @@
 
         <main>
             <div class="register">
-                <form action="/usuarios/register" method="POST">
+                <form action="/usuarios/register" method="POST" enctype="multipart/form-data">
                     <h3>Registrarse</h3>
                     <label for="Usuario">Nombre de Usuario</label>
                     <input type="text" name="username" id="name" value="<%= locals.old && old.username %>">
@@ -25,6 +25,11 @@
                     <% if (locals.errores && errores.name) {%>
                         <p class="error"><%= errores.name %></p>
                     <% } %>
+                    <label id="perfil">Foto de perfil</label>
+                    <div class="btn">
+                        <p>Ingrese una imagen</p>
+                        <input type="file" name="perfil" class="imagen" />
+                    </div>
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password">
                     <label for="confirmed-pass">Confirmar Contraseña</label>
