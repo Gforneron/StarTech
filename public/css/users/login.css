@@ -71,3 +71,7 @@ a {
     0 0 20px rgb(3, 233, 244), 0 0 5px rgb(3, 233, 244);
   cursor: pointer;
 }
+.Bajo_formulario {
+  display: flex;
+  justify-content: space-between;
+}
