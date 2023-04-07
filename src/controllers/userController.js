@@ -3,17 +3,22 @@ const path = require('path');
 const usersPath = path.join(__dirname,'../database/users.json')
 const userData = JSON.parse(fs.readFileSync(usersPath,'utf-8')) 
 const bcryptjs = require('bcryptjs')
+const {validationResult} = require('express-validator');
 const userController = {};
 
 userController.register = (req, res) => {
   return res.render("users/register");
 };
 userController.newUser = (req,res) => {
+  let errores = validationResult(req)
   const dataUser = {
     username: req.body.username,
     password: bcryptjs.hashSync(req.body.password,8),
     email: req.body.email,
     confirmed: bcryptjs.hashSync(req.body.confirmed,8),
+  }
+  if (!errores.isEmpty()) {
+    res.render('register',{errores: errores.mapped(),old: req.body})
   }
   let newId = userData.length + 1
   let newUser = {id: newId,...dataUser}

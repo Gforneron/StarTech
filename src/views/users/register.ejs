@@ -16,13 +16,22 @@
                 <form action="/usuarios/register" method="POST">
                     <h3>Registrarse</h3>
                     <label for="Usuario">Nombre de Usuario</label>
-                    <input type="text" name="username" id="name">
+                    <input type="text" name="username" id="name" value="<%= locals.old && old.username %>">
+                    <% if (locals.errores && errores.name) {%>
+                        <p class="error"><%= errores.username %></p>
+                    <% } %>
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="email" id="email" value="<%= locals.old && old.email %>">
+                    <% if (locals.errores && errores.name) {%>
+                        <p class="error"><%= errores.name %></p>
+                    <% } %>
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password">
                     <label for="confirmed-pass">Confirmar Contraseña</label>
                     <input type="password" name="confirmed" id="confirmed-pass">
+                    <% if (locals.errores && errores.password) {%>
+                        <p class="error"><%= errores.password %></p>
+                    <% } %>
                     <input type="submit" value="ENVIAR">
                     <div class="Bajo_formulario">
                         <a href="">Olvido su Contraseña?</a>
