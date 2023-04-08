@@ -7,7 +7,7 @@ router.use(express.urlencoded({ extended: false }));
 // Implentacion de multer
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'public/images/productos')
+        cb(null, 'public/images/usuarios')
     },
     filename: (req, file, cb) => {
         cb(null, file.fieldname + '-' + Date.now() + '.jpg')
