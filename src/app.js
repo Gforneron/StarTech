@@ -4,6 +4,7 @@ const app = express();
 const path = require("path");
 const port = process.env.port || 3000;
 const methodOverride = require('method-override');
+const cookieParser = require("cookie-parser");
 app.use(methodOverride ("_method"));
 
 
@@ -37,3 +38,6 @@ app.use((req, res, next) => {
 // transformar lo de formularios a objetos y json
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+
+// declarar uso de cookies
+app.use(cookieParser());
