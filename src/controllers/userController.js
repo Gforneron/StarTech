@@ -48,8 +48,14 @@ userController.compareUser = (req,res) =>{
         res.status(500).send('Error al comparar las contraseñas');
         // si esta autenticado correctamente se le dirige al home
       } else if (result) {
+        //pero antes, si es que el usuario lo desea 
+        //dejaremos una cookie con el usuario guardado
+        if (req.body.remind){
+          res.cookie("reminduser", req.body.username, {maxAge: 60000});
+        }
+        //ahora si lo dirigimos a home
         res.redirect('/');
-        // si no se le devuelve un error de contraseña incorrecta
+        // si no, se le devuelve un error de contraseña incorrecta
       } else {
         res.send('Contraseña incorrecta');
       }
