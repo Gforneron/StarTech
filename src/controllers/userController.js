@@ -15,6 +15,7 @@ userController.newUser = (req,res) => {
     username: req.body.username,
     password: bcryptjs.hashSync(req.body.password,8),
     email: req.body.email,
+    perfil: req.file.filename,
     confirmed: bcryptjs.hashSync(req.body.confirmed,8),
   }
   if (!errores.isEmpty()) {
