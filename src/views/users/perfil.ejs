@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h3>hola</h3>
+    <head>
+        <%- include('../partials/head.ejs') %>
+          <link rel="stylesheet" href="/css/users/perfil.css" />
+          <title> Startech </title>
+      </head>
+      <body>
+        <%- include('../partials/header') %>
+      
+        <div class="perfil">
+            <div class="perfil-foto">
+            <img src="/images/usuarios/perfil-1680941445285.jpg" alt="Profile Picture">
+                               <button>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span> Editar Perfil
+              </button>
+            </div>
+          <div class="perfil-info">   
+            <h1>Perfil</h1>
+            <h2>Nombre de usuario</h2>
+            <p>Correo electrónico: example@example.com</p>
+            <p>Teléfono: 555-555-5555</p>
+            </div>  
+          </div>
 </body>
 </html>
