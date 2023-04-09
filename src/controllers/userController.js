@@ -7,25 +7,41 @@ const {validationResult} = require('express-validator');
 const userController = {};
 
 userController.register = (req, res) => {
-  return res.render("users/register");
+  let errores = validationResult(req)
+  if (!errores.isEmpty()) {
+    res.render('register',{errores: errores.mapped(),old: req.body})
+  }
+  return res.render("users/register",{errores});
 };
+userController.newPassword = (req,res) => {
+  return res.render("users/olvidar",{userData,req,validacion: false,mensaje:'Ingrese los datos de la cuenta'})
+};
+userController.changePass = (req,res) => {
+  const { email,password } = req.body
+  const findUser = userData.find((user) => user.email === email)
+  if (findUser) { 
+    findUser.password = password
+    fs.writeFileSync(usersPath,JSON.stringify(userData),'utf-8')
+    res.render('users/olvidar',{validacion: true,mensaje: null})
+  } else {
+    res.render('users/olvidar',{validacion: false,mensaje:'el correo ingresado no esta registrado'})
+  }
+
+  return res.redirect('/usuarios/login',)
+}
 userController.newUser = (req,res) => {
   let errores = validationResult(req)
   const dataUser = {
     username: req.body.username,
     password: bcryptjs.hashSync(req.body.password,8),
     email: req.body.email,
-    perfil: req.file.filename,
     confirmed: bcryptjs.hashSync(req.body.confirmed,8),
-  }
-  if (!errores.isEmpty()) {
-    res.render('register',{errores: errores.mapped(),old: req.body})
   }
   let newId = userData.length + 1
   let newUser = {id: newId,...dataUser}
   userData.push(newUser)
   fs.writeFileSync(usersPath,JSON.stringify(userData),'utf-8')
-  return res.redirect('/usuarios/login')
+  return res.redirect('/usuarios/login')      
 }
 userController.login = (req, res) => {
   return res.render("users/login");

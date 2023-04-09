@@ -1,0 +1,58 @@
+
+a {
+    text-decoration: none;
+    color: rgb(245, 245, 245);
+  }
+  .form h3 {
+    text-align: center;
+    margin-bottom: 45px;
+  }
+  .form {
+    border-radius: 2%;
+    width: 400px;
+    height: 400px;
+    background: rgb(25, 25, 25);
+    color: rgb(255, 255, 255);
+    left: 38%;
+    margin-top: 40px;
+    position: relative;
+    box-sizing: border-box;
+    padding: 30px 30px;
+  }
+  .form label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+  }
+  
+  .form input {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  .form input[type="text"],
+  .form input[type="email"] {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    background: transparent;
+    height: 40px;
+    color: rgb(245, 245, 245);
+    font-size: 16px;
+  }
+  
+  .form input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: rgb(42, 40, 40);
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    border-radius: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-top: 8px;
+    letter-spacing: 2px;
+  }

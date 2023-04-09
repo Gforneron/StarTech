@@ -22,12 +22,5 @@
         "email": "luismartinez@ejemplo.com",
         "password": "password123",
         "category": "user"
-    },
-    {
-        "id": 4,
-        "username": "Forneron",
-        "password": "$2a$08$qVnsRKMijlggYbkbkVBSAug8zyr7TJpTNLKsXE9SrcW0T.n9ucct.",
-        "email": "gonzaloforneron@gmail.com",
-        "confirmed": "$2a$08$gKS7EGax42OppWJVsH9uZuIqOxV3AzXeFgtI3i96ngNjOjpSX0lri"
     }
 ]

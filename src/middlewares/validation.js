@@ -1,13 +1,16 @@
-const { check } = require('express-validator')
+const { check,body } = require('express-validator')
 const register = [
-    check('username')
-    .notEmpty().withMessage('Debes completar este campo').bail()
-    .isLength({min: 5,max: 8}).withMessage('El nombre debe tener por lo menos 5 caracteres').bail(),
-    check('password').notEmpty().withMessage('Este campo no puede estar vacio').bail()
+    body('username','Ingrese un nombre de usuario')
+    .isLength({min: 5, max:8}).withMessage('Debe tener por lo menos 5 caracteres').bail(),
+    body('password','Debe ingresar una contraseña').isLength({max:5,min:8})
+    .withMessage('Este campo debe tener minimo 5 caracteres').bail()
     .isLength({min: 5,max: 8})
     .withMessage('Debe tener entre 5 y 8 caracteres').bail(),
-    check('confirmed')
-    .notEmpty().withMessage('Tienes que confirmar tu contraseña').bail()
+    body('confirmed','Debe confirmar la contrasña ')
+    .notEmpty().withMessage('Tienes que confirmar tu contraseña').bail(),
+    body('email')
+    .notEmpty().withMessage('Este campo es nesesario').bail(),
+    body('perfil').notEmpty().withMessage('este campo es nesesario').bail()
 ]    
 const login = [
     check('username').notEmpty().withMessage('Tienes que completar el nombre de usuario').bail(),

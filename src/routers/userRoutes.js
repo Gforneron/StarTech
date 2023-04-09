@@ -14,7 +14,8 @@ const storage = multer.diskStorage({
     }
 })
 const upload = multer({storage: storage})
-
+router.get('/newPassword',userController.newPassword)
+router.post('/passVerify',userController.changePass)
 router.get("/register",userController.register);
 router.post('/register',validation,upload.single('perfil'),userController.newUser)
 router.get("/login",validation,userController.login);

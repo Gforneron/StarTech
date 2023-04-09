@@ -1,0 +1,27 @@
+<head>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/users/olvidar.css">
+    <title>Olvide mi contraseña</title>
+</head>
+<body>
+    <header>
+        <%- include('../partials/header') %>
+    </header>
+    <div class="contain-form">
+        <form action="/usuarios/passVerify" method="POST" class="form">
+            <div class="titulo">
+                <h3>Restablecer tu contraseña</h3>
+            </div>
+            <label for="email">Correo</label>
+            <input type="email" name="email" id="email" placeholder="Email"/>
+            <% if (validacion) {%>
+                <label for="newPass">Ingrese su nueva contraseña</label>    
+                <input type="text" name="newPass" id="newPass"/>
+            <% }  %>
+            <input type="submit" value="Enviar">
+            <% if (mensaje) {%>
+                <h3><%= mensaje %></h3>
+            <% } %>
+        </form>
+    </div>
+</body>
