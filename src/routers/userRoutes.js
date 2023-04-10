@@ -1,27 +1,57 @@
+// Llamada de modulos
 const express = require("express");
 const router = express.Router();
-const validation = require('../middlewares/validation.js')
+const multer = require("multer");
+
+// Llamada de middlewares
+const validation = require("../middlewares/validation.js");
+const sessionMiddleware = require("../middlewares/sessionMiddleware");
+const autenticacionMiddleware = require("../middlewares/autenticacionMiddleware");
+
+// llamada del controller
 const userController = require("../controllers/userController.js");
-const multer = require('multer')
+
+//
 router.use(express.urlencoded({ extended: false }));
-const sessionMiddleware = require("../middlewares/sessionMiddleware")
-const autenticacionMiddleware = require("../middlewares/autenticacionMiddleware")
+
 // Implentacion de multer
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, 'public/images/usuarios')
-    },
-    filename: (req, file, cb) => {
-        cb(null, file.fieldname + '-' + Date.now() + '.jpg')
-    }
-})
-const upload = multer({storage: storage})
-router.get('/newPassword',userController.newPassword)
-router.post('/passVerify',userController.changePass)
-router.get("/register",sessionMiddleware , userController.register);
-router.post('/register',validation,upload.single('perfil'),userController.newUser)
-router.get("/login",sessionMiddleware, validation,userController.login);
-router.post('/login',validation,userController.compareUser)
-router.get("/perfil",autenticacionMiddleware, userController.perfil)
-router.get("/cerrar", userController.cerrar)
+  destination: (req, file, cb) => {
+    cb(null, "public/images/usuarios");
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.fieldname + "-" + Date.now() + ".jpg");
+  },
+});
+const upload = multer({ storage: storage });
+
+// recuperar contraseña
+router.get("/newPassword", userController.newPassword);
+
+// verificacion de cambio de contraseña
+router.post("/passVerify", userController.changePass);
+
+// retorno formulario register
+router.get("/register", sessionMiddleware, userController.register);
+
+// formulario register
+router.post(
+  "/register",
+  validation,
+  upload.single("perfil"),
+  userController.newUser
+);
+
+// retorno formulario login
+router.get("/login", sessionMiddleware, validation, userController.login);
+
+// formulario login
+router.post("/login", validation, userController.compareUser);
+
+//  retorno perfil
+router.get("/perfil", autenticacionMiddleware, userController.perfil);
+
+// cerrado de sesion
+router.get("/cerrar", userController.cerrar);
+
 module.exports = router;

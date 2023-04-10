@@ -1,9 +1,13 @@
+// Llamada de modulos
 const express = require("express");
 const router = express.Router();
-const productController = require("../controllers/productsController.js");
 const multer = require('multer');
-router.use(express.urlencoded({ extended: false }));
+
+//Llamado de middlewares
 const autenticacionMiddleware = require("../middlewares/autenticacionMiddleware")
+
+const productController = require("../controllers/productsController.js");
+router.use(express.urlencoded({ extended: false }));
 
 // Inplementacion de Multer
 
@@ -34,7 +38,7 @@ router.get("/delete/:id",productController.delete)
 router.get("/create", productController.create);
 
 // Listado de productos
-router.get("/listado", productController.listado);
+router.get("/listado", autenticacionMiddleware, productController.listado);
 
 router.post("/create", upload.single('imagen'),productController.newProduct);
 

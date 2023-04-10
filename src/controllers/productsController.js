@@ -1,9 +1,11 @@
-const productController = {};
+// Llamada de modulos
 const fs = require("fs");
 const path = require("path");
 
 const productsFilePath = path.join(__dirname, "../database/productos.json");
 const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+
+const productController = {};
 
 //Detalles de productos
 productController.detalles = (req, res) => {
