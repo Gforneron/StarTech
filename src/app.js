@@ -1,5 +1,6 @@
 // LLamadas de Librerias
 const express = require("express");
+const session = require("express-session");
 const app = express();
 const path = require("path");
 const port = process.env.port || 3000;
@@ -18,6 +19,14 @@ app.set('views', path.resolve(__dirname,'views'));
 const publico = path.resolve(__dirname, "../public");
 app.use(express.static(publico));
 
+app.use(session({
+    secret: 'secret-key',
+    resave: false,
+    saveUninitialized: false
+  }));
+
+  // declarar uso de cookies
+app.use(cookieParser());
 // Levantar servidor
 
 app.listen(port, () => console.log("Corriendo servidor en: http://localhost:3000/"));
@@ -39,5 +48,3 @@ app.use((req, res, next) => {
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
-// declarar uso de cookies
-app.use(cookieParser());

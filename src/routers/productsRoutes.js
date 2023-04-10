@@ -3,6 +3,8 @@ const router = express.Router();
 const productController = require("../controllers/productsController.js");
 const multer = require('multer');
 router.use(express.urlencoded({ extended: false }));
+const autenticacionMiddleware = require("../middlewares/autenticacionMiddleware")
+
 // Inplementacion de Multer
 
 const storage = multer.diskStorage({
@@ -19,7 +21,7 @@ const upload = multer({storage: storage})
 router.get("/detalle/:id", productController.detalles);
 
 // Carito de productos
-router.get("/carrito", productController.carrito);
+router.get("/carrito", autenticacionMiddleware, productController.carrito);
 
 // Formulario de edición de productos
 router.get("/:id/edit", productController.edit);

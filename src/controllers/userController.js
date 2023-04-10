@@ -35,7 +35,11 @@ userController.newUser = (req,res) => {
     username: req.body.username,
     password: bcryptjs.hashSync(req.body.password,8),
     email: req.body.email,
+    perfil: req.file.filename,
     confirmed: bcryptjs.hashSync(req.body.confirmed,8),
+  };
+  if (!errores.isEmpty()) {
+    res.render("register", { errores: errores.mapped(), old: req.body });
   }
   let newId = userData.length + 1
   let newUser = {id: newId,...dataUser}
@@ -66,11 +70,14 @@ userController.compareUser = (req,res) =>{
       } else if (result) {
         //pero antes, si es que el usuario lo desea 
         //dejaremos una cookie con el usuario guardado
-        if (req.body.remind){
-          res.cookie("reminduser", req.body.username, {maxAge: 60000});
+        if (req.body.remind) {
+          res.cookie("reminduser", req.body.username, { maxAge: (1000 * 60) });
         }
+        //Guardamos el usuario logueado 
+        req.session.usuarioLogueado = user;
+
         //ahora si lo dirigimos a home
-        res.redirect('/');
+        res.redirect("/usuarios/perfil");
         // si no, se le devuelve un error de contraseña incorrecta
       } else {
         res.send('Contraseña incorrecta');
@@ -79,6 +86,12 @@ userController.compareUser = (req,res) =>{
   }
 };
 userController.perfil = (req, res) => {
-  return res.render("users/perfil");
+  console.log(req.session);
+  usuario = req.session.usuarioLogueado
+  return res.render("users/perfil", {usuario});
 };
+userController.cerrar = (req, res) => {
+  req.session.destroy();
+  return res.redirect('/')
+}
 module.exports = userController;

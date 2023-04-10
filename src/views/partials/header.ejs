@@ -7,7 +7,11 @@
         <span class="fa-solid fa-magnifying-glass sombra"></span>
       </div>
     </form>
-    <span class="fa-solid fa-user contorno" onclick="location.href='/usuarios/login'"></span>
+    <%  if (typeof usuario !== 'undefined') { %>
+      <img src="/images/usuarios/<%= usuario.perfil %>" alt="imagen de perfil" onclick="location.href='/usuarios/perfil'" id="perfil">
+    <% } else { %>
+      <span class="fa-solid fa-user contorno" onclick="location.href='/usuarios/login'"></span>
+    <% } %>
     <span class="fa-solid fa-cart-shopping contorno" onclick="location.href='/productos/carrito'"> </span>
   </div>
   <nav>
@@ -73,6 +77,14 @@
     .formulary {
       text-align: right;
       width: 50%;
+    }
+
+    #perfil {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      cursor: pointer;
     }
 
     .fa-magnifying-glass {
