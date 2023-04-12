@@ -14,43 +14,38 @@
 
         <main>
             <div class="main">
-                <img src="/images/productos/<%= product.imagen%>" id="producto">
                 <div class="descripcion">
-                    <h3>Detalles del producto</h3>
-                    <span class="fa-solid fa-dollar-sign">
-                        <%= product.precio%>
-                    </span>
-                    <p id="clase">
-                        <%= product.clase %>
-                    </p>
-                    <h3 id="detalles">
-                        <%= product.nombre %>
-                    </h3>
-                    <p id="parrafo">
-                        Este producto posee un descuento del: <br>
-                        <%= product.descuento %>%
-                    </p>
+                    <img src="/images/productos/<%= product.imagen%>" id="producto">
+                    <div class="descripcion-producto">
+                        <h3 id="titulo"><%= product.nombre %></h3>
+                        <span class="fa-solid fa-dollar-sign precio">
+                            <%= product.precio%>
+                        </span>
+                        <p id="clase">
+                            <%= product.clase %>
+                        </p>
+                        <p id="parrafo">
+                            Este producto posee un descuento del: <br>
+                            <%= product.descuento %>%
+                        </p>
+                    </div>
+                    <div class="boton">
+                        <input type="button" value="Agregar al Carrito" >
+                    </div>
                 </div>
                 <h3 id="similares">Productos similares</h3>
                 <div class="productos-similares">
                     <% productosSimilar.forEach(similares => { %>
                         <img src="/images/productos/<%= similares.imagen %>">
-                        <div class="descripcion-producto">
-                            <p><%= similares.nombre %></p>
-                            <p><%= similares.clase  %></p>
-                            <p><%= similares.precio %></p>
+                        <div class="descripcion-productos">
+                            <h3 id="titulo"><%= similares.nombre %></h3 id="titulo">
+                            <span class="fa-solid fa-dollar-sign precio"><%= similares.precio %></span>
+                            <p id="clase"><%= similares.clase  %></p>
                             <span>Envio Gratis</span>
                         </div>
                     <% }) %>
-                </div>
-                <div class="reseñas">
-                    <h3 id="reseñas">Opiniones y reseñas</h3>
-                    <h3 id="comentarios">Comentarios</h3>
-                    <div class="comentarios">
-                        <span class="fa-solid fa-user user"></span>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta vero iste harum blanditiis
-                            consequatur placeat, qui sunt beatae delectus. Adipisci mollitia autem in velit rem officiis
-                            dignissimos ut voluptatum maiores.</p>
+                    <div class="ver-producto">
+                        <input type="button" value="Ver producto">
                     </div>
                 </div>
             </div>
