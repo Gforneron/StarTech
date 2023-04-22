@@ -1,6 +1,7 @@
 // Llamada de modulos
 const fs = require("fs");
 const path = require("path");
+const db = require("../database/models")
 
 const productsFilePath = path.join(__dirname, "../database/productos.json");
 const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
@@ -80,7 +81,7 @@ productController.listado = (req, res) => {
 };
 
 // Agregado de producto nuevo a database
-productController.newProduct = (req, res) => {
+productController.newProduct = async (req, res) => {
   // sacamos los datos del formulario con req.body
   let newProductData = {
     nombre: req.body.nombre,
@@ -91,15 +92,9 @@ productController.newProduct = (req, res) => {
   };
   let newId = productos.length + 1;
 
-  // usamos el spreed operator
-  let newProduct = { id: newId, ...newProductData };
-  productos.push(newProduct);
-  // guardamos los cambios en el archivo json
-  fs.writeFileSync(
-    productsFilePath,
-    JSON.stringify(productos, null, 2),
-    "utf-8"
-  );
+  // usamos el spreed operator para agregarlo a la base de datos
+  await db.Producto.create({ id: newId, ...newProductData });
+
   return res.redirect("/productos/listado");
 };
 
