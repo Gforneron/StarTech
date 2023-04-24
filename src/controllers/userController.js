@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
 const bcryptjs = require("bcryptjs");
+const db = require("../database/models");
 
 // llamado base de datos
 const usersPath = path.join(__dirname, "../database/users.json");
@@ -51,7 +52,7 @@ userController.register = (req, res) => {
 
 // formulario register
 
-userController.newUser = (req, res) => {
+userController.newUser = async (req, res) => {
   let errores = validationResult(req);
   const dataUser = {
     username: req.body.username,
@@ -61,15 +62,12 @@ userController.newUser = (req, res) => {
     confirmed: bcryptjs.hashSync(req.body.confirmed, 8),
   };
   if (!errores.isEmpty()) {
-    res.render("register", { errores: errores.mapped(), old: req.body });
+    await db.Usuario.create(dataUser);
+    return res.redirect("/usuarios/login");
   }
-  let newId = userData.length + 1;
-  let newUser = { id: newId, ...dataUser };
-  userData.push(newUser);
-  fs.writeFileSync(usersPath, JSON.stringify(userData), "utf-8");
-  return res.redirect("/usuarios/login");
-};
+  res.render("users/register", { errores: errores.mapped(), old: req.body });
 
+};
 // retorno formulario login
 
 userController.login = (req, res) => {
@@ -117,7 +115,6 @@ userController.compareUser = (req, res) => {
 //  retorno perfil
 
 userController.perfil = (req, res) => {
-  console.log(req.session);
   usuario = req.session.usuarioLogueado;
   return res.render("users/perfil", { usuario });
 };

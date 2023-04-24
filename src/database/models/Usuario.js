@@ -10,15 +10,18 @@ module.exports = function (sequelize, DataTypes) {
     email: {
       type: DataTypes.STRING,
     },
-    nombre: {
+    username: {
       type: DataTypes.STRING,
     },
     password: {
       type: DataTypes.STRING,
     },
-    imagen: {
+    perfil: {
       type: DataTypes.BLOB,
     },
+    confirmed: {
+      type: DataTypes.STRING,
+    }
   };
 
   let config = {
