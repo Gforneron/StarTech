@@ -33,7 +33,7 @@ app.use(cookieParser());
 // Configurar las rutas de la aplicación
 app.use('/', require('./routers/mainRoutes.js'))              // rutas para el inicio de la aplicación
 app.use('/productos', require('./routers/productsRoutes.js')) // rutas para los productos
-app.use('/usuarios', require('./routers/userRoutes'));        // rutas para los usuarios
+app.use('/usuarios', require('./routers/userRoutes.js'));        // rutas para los usuarios
 
 // Manejar errores 404
 app.use((req, res, next) => {

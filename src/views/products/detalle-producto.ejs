@@ -22,7 +22,7 @@
                             <%= product.precio%>
                         </span>
                         <p id="clase">
-                            <%= product.clase %>
+                            <%= product.clase.nombre%>
                         </p>
                         <p id="parrafo">
                             Este producto posee un descuento del: <br>
@@ -40,7 +40,11 @@
                         <div class="descripcion-productos">
                             <h3 id="titulo"><%= similares.nombre %></h3 id="titulo">
                             <span class="fa-solid fa-dollar-sign precio"><%= similares.precio %></span>
-                            <p id="clase"><%= similares.clase  %></p>
+                            <p id="clase"><%= similares.clase.nombre  %></p>
+                            <p id="parrafo">
+                                Y con un descuento del: <br>
+                                <%= product.descuento %>%
+                            </p>
                             <span>Envio Gratis</span>
                         </div>
                     <% }) %>

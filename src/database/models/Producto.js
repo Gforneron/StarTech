@@ -22,9 +22,6 @@ module.exports = function (sequelize, DataTypes) {
     clase_id: {
       type: DataTypes.INTEGER,
     },
-    marca_id: {
-      type: DataTypes.INTEGER,
-    },
   };
 
   let config = {
