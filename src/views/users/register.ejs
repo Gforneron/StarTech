@@ -17,14 +17,8 @@
                     <h3>Registrarse</h3>
                     <label for="Usuario">Nombre de Usuario</label>
                     <input type="text" name="username" id="name" value="<%= locals.old && old.username %>">
-                    <% if (locals.errores && errores.name) {%>
-                        <p class="error"><%= errores.username %></p>
-                    <% } %>
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" value="<%= locals.old && old.email %>">
-                    <% if (locals.errores && errores.name) {%>
-                        <p class="error"><%= errores.name %></p>
-                    <% } %>
                     <label id="perfil">Foto de perfil</label>
                     <div class="btn">
                         <p>Ingrese una imagen</p>
@@ -34,10 +28,14 @@
                     <input type="password" name="password" id="password">
                     <label for="confirmed-pass">Confirmar Contraseña</label>
                     <input type="password" name="confirmed" id="confirmed-pass">
-                    <% if (locals.errores && errores.password) {%>
-                        <p class="error"><%= errores.password %></p>
-                    <% } %>
                     <input type="submit" value="Registrar">
+                    <div>
+                        <% if (locals.errors) {%>
+                            <% errors.forEach(error => { %>
+                                <p><%= error.msg %></p>
+                            <% }) %>    
+                        <% } %>
+                    </div>
                     <div class="Bajo_formulario">
                         <a href="">Olvido su Contraseña?</a>
                         <a href="/usuarios/login">Ingresar</a>
