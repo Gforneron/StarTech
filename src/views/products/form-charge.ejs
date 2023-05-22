@@ -41,6 +41,13 @@
         <div class="precio">
             <label for="precio">Precio</label>
             <input type="number" name="precio" id="precio">
+            <div>
+                <% if (locals.errors) {%>
+                    <% errors.forEach(error => { %>
+                        <p><%= error.msg %></p>
+                    <% }) %>    
+                <% } %>
+            </div>
             <input type="submit" name="boton" value="Enviar" id="boton">
         </div>
     </form>

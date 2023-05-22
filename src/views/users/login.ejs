@@ -24,6 +24,15 @@
                     <!-- Password -->
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password" value="<% locals.old && old.email %>">
+
+                    <div>
+                        <% if (locals.errors) {%>
+                            <% errors.forEach(error => { %>
+                                <p><%= error.msg %></p>
+                            <% }) %>    
+                        <% } %>
+                    </div>
+
                     <!-- Checkbox recordarme -->
                     <label for="remind">Recordar usuario</label>
                     <input type="checkbox" name="remind">

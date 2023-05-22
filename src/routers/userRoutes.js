@@ -4,7 +4,8 @@ const router = express.Router();
 const multer = require("multer");
 
 // Llamada de middlewares
-const validation = require("../middlewares/validation.js");
+const validationRegister = require("../middlewares/validationRegister.js");
+const validationLogin = require("../middlewares/validationLogin.js");
 const sessionMiddleware = require("../middlewares/sessionMiddleware");
 const autenticacionMiddleware = require("../middlewares/autenticacionMiddleware");
 
@@ -22,6 +23,16 @@ const storage = multer.diskStorage({
   filename: (req, file, cb) => {
     cb(null, file.fieldname + "-" + Date.now() + ".jpg");
   },
+  fileFilter: (req, file, cb) => {
+    const allowedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
+    const fileExtension = getFileExtension(file.originalname);
+
+    if (allowedExtensions.includes(fileExtension.toLowerCase())) {
+      cb(null, true); 
+    } else {
+      cb(new Error('Formato de archivo no válido.')); 
+    }
+  }
 });
 const upload = multer({ storage: storage });
 
@@ -37,16 +48,20 @@ router.get("/register", sessionMiddleware, userController.register);
 // formulario register
 router.post(
   "/register",
-  validation,
+  validationRegister,
   upload.single("perfil"),
   userController.newUser
 );
 
 // retorno formulario login
-router.get("/login", sessionMiddleware, validation, userController.login);
+router.get("/login", sessionMiddleware, userController.login);
 
 // formulario login
-router.post("/login", validation, userController.compareUser);
+router.post(
+  "/login", 
+  validationLogin, 
+  userController.compareUser
+);
 
 //  retorno perfil
 router.get("/perfil", autenticacionMiddleware, userController.perfil);
