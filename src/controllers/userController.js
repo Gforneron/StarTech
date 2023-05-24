@@ -13,34 +13,42 @@ const userController = {};
 
 // recuperar contraseña
 userController.newPassword = (req, res) => {
-  db.Usuario.findByPk()
-  .then(function () {    
-      res.render('users/olvidar',{userData,req,validacion: false,mensaje: "Ingrese los datos de la cuenta",})
-    }).catch(function (err) {
-      console.log(err);
-    })
+  res.render("users/olvidar", {
+    userData,
+    req,
+    validacion: false,
+    mensaje: "Ingrese los datos de la cuenta",
+  });
 };
 
 // verificacion de cambio de contraseña
 
-userController.changePass = (req, res) => {
-  
-  const { email, password } = req.body;
-  const findUser = userData.find((user) => user.email === email);
-  if (findUser) {
-    findUser.password = password;
-    fs.writeFileSync(usersPath, JSON.stringify(userData), "utf-8");
-  } else {
-      res.redirect('users/olvidar',{validacion: false,mensaje: "el correo ingresado no esta registrado",})
+userController.changePass = async (req, res) => {
+  try {
+    const { email, newPass, password } = req.body;
+    const findUser = await db.Usuario.findOne({ where: { email: email } });
+    if (findUser) {
+      await db.Usuario.update(
+        { password: newPass },
+        { where: {email: email} }
+      );
+      
+      res.render("users/olvidar", { validacion: true, mensaje: ""});
+    } else {
+      res.render("users/olvidar", {
+        validacion: false,
+        mensaje: "el correo ingresado no esta registrado",
+      });
+    }
+  } catch (error) {
+    console.log(error);
   }
-
-  return res.redirect("/usuarios/login");
 };
 
 // retorno formulario register
 
 userController.register = (req, res) => {
-  res.render('users/register')
+  res.render("users/register");
 };
 
 // formulario register
@@ -57,18 +65,13 @@ userController.newUser = async (req, res) => {
     await db.Usuario.create(dataUser);
     return res.redirect("/usuarios/login");
   } else {
-    res.render('users/register',{errors: errores.array(),old:req.body}) 
+    res.render("users/register", { errors: errores.array(), old: req.body });
   }
 };
 // retorno formulario login
 
 userController.login = (req, res) => {
-  db.Usuario.findAll()
-  .then(function () {
-    res.render('users/login')
-  }).catch((err) => {
-    console.log(err);
-  })
+  res.render("users/login");
 };
 
 // formulario login
@@ -82,7 +85,7 @@ userController.login = (req, res) => {
 userController.compareUser = async (req, res) => {
   try {
     const { username, password } = req.body;
-    
+
     // Busca el usuario en la base de datos por nombre de usuario
     const user = await db.Usuario.findOne({ where: { username } });
 
@@ -96,7 +99,7 @@ userController.compareUser = async (req, res) => {
       if (req.body.remind) {
         res.cookie("reminduser", req.body.username, { maxAge: 1000 * 60 });
       }
-      
+
       req.session.usuarioLogueado = user;
 
       return res.redirect("/usuarios/perfil");
@@ -107,34 +110,31 @@ userController.compareUser = async (req, res) => {
     console.error("Error al comparar las contraseñas:", error);
     return res.status(500).send("Error al comparar las contraseñas");
   }
-}
+};
 //  retorno perfil
 
 userController.perfil = (req, res) => {
   usuario = req.session.usuarioLogueado;
-  db.Usuario.findAll()
-  .then(function () {
-    res.render('users/perfil')
-  })
+  db.Usuario.findAll().then(function () {
+    res.render("users/perfil");
+  });
 };
-userController.perfilEditView = (req,res) => {
-  db.Usuario.findAll()
-  .then(() => {
-    res.render('users/perfilEdit')
-  })
-}
-userController.perfilEdit = (req,res) => {
+userController.perfilEditView = (req, res) => {
+  db.Usuario.findAll().then(() => {
+    res.render("users/perfilEdit");
+  });
+};
+userController.perfilEdit = (req, res) => {
   const userID = req.params.id;
-  const user = userData.find(user => user.id === parseInt(userID));
+  const user = userData.find((user) => user.id === parseInt(userID));
   if (!product) {
-    
   }
-  user.username = req.body.username
-  user.email = req.body.email
-  user.perfil = req.file.filname
-  fs.writeFileSync(usersPath,JSON.stringify(userData,null,2),'utf-8')
-  return res.redirect('/usuarios/perfil')
-}
+  user.username = req.body.username;
+  user.email = req.body.email;
+  user.perfil = req.file.filname;
+  fs.writeFileSync(usersPath, JSON.stringify(userData, null, 2), "utf-8");
+  return res.redirect("/usuarios/perfil");
+};
 // cerrado de sesion
 
 userController.cerrar = (req, res) => {
