@@ -79,42 +79,35 @@ userController.login = (req, res) => {
 
 // formulario login
 
-userController.compareUser = (req, res) => {
-  // desecstructuramos el objeto body
-  const { username, password } = req.body;
-  // buscamos que el usuario sea igual
-  const user = userData.find((user) => user.username === username);
-  if (!user) {
-    // si el usuario no existe enviamos un 401
-    res.status(401).send("Usuario no encontrado");
-  } else {
-    // usamos bcryptjs y comparamos la contraseña con la variable
-    // "user" y accedemos al valor de "password"
-    bcryptjs.compare(password, user.password, function (err, result) {
-      // manejamos los errores y si hay uno
-      // decimos que le envie un error en la comparacion
-      if (err) {
-        res.status(500).send("Error al comparar las contraseñas");
-        // si esta autenticado correctamente se le dirige al home
-      } else if (result) {
-        //pero antes, si es que el usuario lo desea
-        //dejaremos una cookie con el usuario guardado
-        if (req.body.remind) {
-          res.cookie("reminduser", req.body.username, { maxAge: 1000 * 60 });
-        }
-        //Guardamos el usuario logueado
-        req.session.usuarioLogueado = user;
+userController.compareUser = async (req, res) => {
+  try {
+    const { username, password } = req.body;
+    
+    // Busca el usuario en la base de datos por nombre de usuario
+    const user = await db.Usuario.findOne({ where: { username } });
 
-        //ahora si lo dirigimos a home
-        res.redirect("/usuarios/perfil");
-        // si no, se le devuelve un error de contraseña incorrecta
-      } else {
-        res.send("Contraseña incorrecta");
+    if (!user) {
+      return res.status(401).send("Usuario no encontrado");
+    }
+
+    const match = await bcryptjs.compare(password, user.password);
+
+    if (match) {
+      if (req.body.remind) {
+        res.cookie("reminduser", req.body.username, { maxAge: 1000 * 60 });
       }
-    });
-  }
-};
+      
+      req.session.usuarioLogueado = user;
 
+      return res.redirect("/usuarios/perfil");
+    } else {
+      return res.send("Contraseña incorrecta");
+    }
+  } catch (error) {
+    console.error("Error al comparar las contraseñas:", error);
+    return res.status(500).send("Error al comparar las contraseñas");
+  }
+}
 //  retorno perfil
 
 userController.perfil = (req, res) => {
@@ -134,6 +127,7 @@ userController.perfilEdit = (req,res) => {
   const userID = req.params.id;
   const user = userData.find(user => user.id === parseInt(userID));
   if (!product) {
+    
   }
   user.username = req.body.username
   user.email = req.body.email
