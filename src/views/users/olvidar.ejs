@@ -17,7 +17,8 @@
             <% if (validacion) {%>
                 <label for="newPass">Ingrese su nueva contraseña</label>    
                 <input type="text" name="newPass" id="newPass"/>
-            <% }  %>
+                <input type="text" name="confirmed" id="confirmed">
+            <% } %>
             <input type="submit" value="Enviar">
             <% if (mensaje) {%>
                 <h3><%= mensaje %></h3>

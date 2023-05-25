@@ -16,7 +16,7 @@ module.exports = function (sequelize, DataTypes) {
     password: {
       type: DataTypes.STRING,
     },
-    filename: {
+    perfil: {
       type: DataTypes.BLOB,
     },
     confirmed: {

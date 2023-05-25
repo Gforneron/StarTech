@@ -1,0 +1,35 @@
+<%- include('../partials/head') %>
+<title>Perfil Edit</title>
+<link rel="stylesheet" href="/css/users/perfilEdit.css" />
+<body>
+  <%- include('../partials/header') %>
+  <main>
+    <form action="/usuarios/perfilEdit" method="POST" enctype="multipart/form-data">
+      <div class="perfil">
+        <div class="btn">
+          <p>Ingrese una imagen</p>
+          <input type="file" name="perfil" class="perfil" />
+        </div>
+        <div class="perfil-info">
+          <h1>Perfil</h1>
+          <h2>Cambiar Nombre</h2>
+          <input type="text" name="username" id="username" />
+          <h2>Correo original</h2>
+          <input type="email" name="original" id="original" />
+          <h2>Cambiar Correo</h2>
+          <input type="email" name="email" id="email" />
+          <h2>Cambiar Telefono</h2>
+          <input type="number" name="telefono" id="telefono" />
+          <div class="perfil-foto">
+            <button type="submit">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span> Guardar
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </main>
+</body>
