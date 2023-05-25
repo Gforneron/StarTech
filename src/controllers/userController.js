@@ -3,19 +3,14 @@ const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
 const bcryptjs = require("bcryptjs");
-const db = require("../database/models");
-
 // llamado base de datos
-const usersPath = path.join(__dirname, "../database/users.json");
-const userData = JSON.parse(fs.readFileSync(usersPath, "utf-8"));
+const db = require("../database/models");
 
 const userController = {};
 
 // recuperar contraseña
 userController.newPassword = (req, res) => {
   res.render("users/olvidar", {
-    userData,
-    req,
     validacion: false,
     mensaje: "Ingrese los datos de la cuenta",
   });
@@ -25,15 +20,20 @@ userController.newPassword = (req, res) => {
 
 userController.changePass = async (req, res) => {
   try {
-    const { email, newPass, password } = req.body;
+    const { email, newPass, confirmed } = req.body;
     const findUser = await db.Usuario.findOne({ where: { email: email } });
     if (findUser) {
-      await db.Usuario.update(
-        { password: newPass },
-        { where: {email: email} }
-      );
-      
-      res.render("users/olvidar", { validacion: true, mensaje: ""});
+      res.render("users/olvidar", { validacion: true, mensaje: "" });
+      if (newPass === confirmed) {
+        const hashPass = await bcryptjs.hash(newPass,10)
+        const hashConfirm = await bcryptjs.hash(confirmed,10)
+        await db.Usuario.update(
+          { password: hashPass, confirmed: hashConfirm },
+          { where: { email: email } }
+        );
+      } else {
+        res.render('users/olvidar',{validacion: false, mensaje: "las contraseñas no son iguales"})
+      }
     } else {
       res.render("users/olvidar", {
         validacion: false,
@@ -115,24 +115,16 @@ userController.compareUser = async (req, res) => {
 
 userController.perfil = (req, res) => {
   usuario = req.session.usuarioLogueado;
-  db.Usuario.findAll().then(function () {
-    res.render("users/perfil");
-  });
-};
-userController.perfilEditView = (req, res) => {
-  db.Usuario.findAll().then(() => {
-    res.render("users/perfilEdit");
-  });
+  res.render("users/perfil");
 };
 userController.perfilEdit = (req, res) => {
+  res.render("users/perfilEditView");
+};
+userController.perfilEdit = (req, res) => {
+  const { username } = req.body;
   const userID = req.params.id;
-  const user = userData.find((user) => user.id === parseInt(userID));
-  if (!product) {
-  }
-  user.username = req.body.username;
-  user.email = req.body.email;
-  user.perfil = req.file.filname;
-  fs.writeFileSync(usersPath, JSON.stringify(userData, null, 2), "utf-8");
+  const user = db.Usuario.findOne({ where: { username: username } });
+
   return res.redirect("/usuarios/perfil");
 };
 // cerrado de sesion
