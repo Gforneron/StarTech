@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <%- include('../partials/head.ejs') %>
-          <link rel="stylesheet" href="/css/users/perfil.css" />
-          <title> Startech </title>
-      </head>
-      <body>
-        <%- include('../partials/header') %>
-      <main>
-        <div class="perfil">
-            <div class="perfil-foto">
-              <img src="/images/usuarios/<%= usuario.perfil %>" alt="imagen de perfil" class="perfil">
-              <button>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span> Editar Perfil
-              </button>
-            </div>
-          <div class="perfil-info">   
-            <h1>Perfil</h1>
-            <h2>Nombre: <%= usuario.username %></h2>
-            <p>Correo electrónico: <%= usuario.email %></p>
-            <p>Teléfono: 555-555-5555</p>
-            </div>  
-          </div>
-          <a href="/usuarios/cerrar" class="boton_delete">Cerrar session</a>
-        </main>
-        <%- include('../partials/footer') %>
-        </body>
+  <head>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/users/perfil.css" />
+    <title>Startech</title>
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+    <main>
+      <div class="perfil">
+        <div class="perfil-foto">
+          <img
+            src="/images/usuarios/<%= usuario.perfil %>"
+            alt="imagen de perfil"
+            class="perfil"
+          />
+          <button onclick="location.href = '/usuarios/perfilEdit'">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span> Editar Perfil
+          </button>
+        </div>
+        <div class="perfil-info">
+          <h1>Perfil</h1>
+          <h2>Nombre: <%= usuario.username %></h2>
+          <p>Correo electrónico: <%= usuario.email %></p>
+          <p>Teléfono: 555-555-5555</p>
+        </div>
+      </div>
+      <a href="/usuarios/cerrar" class="boton_delete">Cerrar session</a>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
 </html>

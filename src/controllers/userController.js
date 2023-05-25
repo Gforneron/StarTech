@@ -1,6 +1,4 @@
 // LLamado de modulos
-const fs = require("fs");
-const path = require("path");
 const { validationResult } = require("express-validator");
 const bcryptjs = require("bcryptjs");
 // llamado base de datos
@@ -25,14 +23,17 @@ userController.changePass = async (req, res) => {
     if (findUser) {
       res.render("users/olvidar", { validacion: true, mensaje: "" });
       if (newPass === confirmed) {
-        const hashPass = await bcryptjs.hash(newPass,10)
-        const hashConfirm = await bcryptjs.hash(confirmed,10)
+        const hashPass = await bcryptjs.hash(newPass, 10);
+        const hashConfirm = await bcryptjs.hash(confirmed, 10);
         await db.Usuario.update(
           { password: hashPass, confirmed: hashConfirm },
           { where: { email: email } }
         );
       } else {
-        res.render('users/olvidar',{validacion: false, mensaje: "las contraseñas no son iguales"})
+        res.render("users/olvidar", {
+          validacion: false,
+          mensaje: "las contraseñas no son iguales",
+        });
       }
     } else {
       res.render("users/olvidar", {
@@ -117,14 +118,15 @@ userController.perfil = (req, res) => {
   usuario = req.session.usuarioLogueado;
   res.render("users/perfil");
 };
-userController.perfilEdit = (req, res) => {
-  res.render("users/perfilEditView");
+userController.perfilEditView = (req, res) => {
+  res.render("users/perfilEdit");
 };
 userController.perfilEdit = (req, res) => {
-  const { username } = req.body;
-  const userID = req.params.id;
-  const user = db.Usuario.findOne({ where: { username: username } });
-
+  const { username, email, original } = req.body;
+  db.Usuario.update(
+    { username: username, email: email, perfil: req.file },
+    { where: { email: original } }
+  );
   return res.redirect("/usuarios/perfil");
 };
 // cerrado de sesion
