@@ -63,7 +63,7 @@ userController.newUser = async (req, res) => {
   };
   if (!errores.isEmpty()) {
     await db.Usuario.create(dataUser);
-    return res.redirect("/usuarios/login");
+    return res.redirect("/usuarios/register");
   }
   res.render("users/register", { errores: errores.mapped(), old: req.body });
 
