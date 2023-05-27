@@ -3,48 +3,67 @@
 
 <head>
     <%- include('../partials/head.ejs') %>
-        <title>Register</title>
-        <link rel="stylesheet" href="/css/users/register.css">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/users/register.css">
 </head>
 
 <body>
 
     <%- include('../partials/header') %>
 
-        <main>
-            <div class="register">
-                <form action="/usuarios/register" method="POST" enctype="multipart/form-data">
-                    <h3>Registrarse</h3>
-                    <label for="Usuario">Nombre de Usuario</label>
-                    <input type="text" name="username" id="name" value="<%= locals.old && old.username %>">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" value="<%= locals.old && old.email %>">
-                    <label id="perfil">Foto de perfil</label>
-                    <div class="btn">
-                        <p>Ingrese una imagen</p>
-                        <input type="file" name="perfil" class="imagen" />
-                    </div>
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password">
-                    <label for="confirmed-pass">Confirmar Contraseña</label>
-                    <input type="password" name="confirmed" id="confirmed-pass">
-                    <input type="submit" value="Registrar">
-                    <div>
-                        <% if (locals.errors) {%>
-                            <% errors.forEach(error => { %>
-                                <p><%= error.msg %></p>
-                            <% }) %>    
-                        <% } %>
-                    </div>
-                    <div class="Bajo_formulario">
-                        <a href="">Olvido su Contraseña?</a>
-                        <a href="/usuarios/login">Ingresar</a>
-                    </div>
-                </form>
-            </div>
-        </main>
+    <main>
+        <div class="register">
+            <form id="register-form" action="/usuarios/register" method="POST" enctype="multipart/form-data">
+                <h3>Registrarse</h3>
+                <label for="Usuario">Nombre de Usuario</label>
+                <input type="text" name="username" id="name" value="<%= locals.old && old.username %>">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" value="<%= locals.old && old.email %>">
+                <label id="perfil">Foto de perfil</label>
+                <div class="btn">
+                    <p>Ingrese una imagen</p>
+                    <input type="file" name="perfil" id="image-input" class="imagen" accept="image/*">
+                </div>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+                <label for="confirmed-pass">Confirmar Contraseña</label>
+                <input type="password" name="confirmed" id="confirmed-pass">
+                <input type="submit" value="Registrar">
+                <div>
+                    <% if (locals.errors) {%>
+                    <% errors.forEach(error => { %>
+                    <p><%= error.msg %></p>
+                    <% }) %>
+                    <% } %>
+                </div>
+                <div class="Bajo_formulario">
+                    <a href="">Olvido su Contraseña?</a>
+                    <a href="/usuarios/login">Ingresar</a>
+                </div>
+            </form>
+        </div>
+    </main>
 
-        <%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>
+
+    <script>
+        document.getElementById('register-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Evita que el formulario se envíe automáticamente
+
+            var fileInput = document.getElementById('image-input');
+            var file = fileInput.files[0];
+
+            if (file && file.type.startsWith('image/')) {
+                // El archivo es válido, puedes continuar con el proceso de registro
+                // Aquí puedes agregar tu lógica para enviar el formulario al backend, por ejemplo:
+                // document.getElementById('register-form').submit();
+                console.log('Archivo válido');
+            } else {
+                // El archivo no es válido
+                console.log('Archivo inválido');
+            }
+        });
+    </script>
 
 </body>
 
