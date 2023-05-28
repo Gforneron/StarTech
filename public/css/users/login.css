@@ -75,3 +75,12 @@ a {
   display: flex;
   justify-content: space-between;
 }
+
+.is-invalid{
+  color: red;
+  margin: 2px;
+}
+
+.errores {
+  display:none;
+}

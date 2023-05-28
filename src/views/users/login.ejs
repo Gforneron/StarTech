@@ -8,22 +8,21 @@
 </head>
 
 <body>
-
     <%- include('../partials/header') %>
 
         <main>
             <div class="login">
-                <form action="" method="post">
+                <form action="" method="post" id="formulario">
+                    <ul class="errores"></ul>
                     <h3>Login</h3>
                     <!-- Username  -->
                     <label for="username">Username</label>
                     <input type="text" name="username" id="username" placeholder="Username">
-                    <% if (locals.errors && errors.name) { %>
-                        <p class="feedback"><%= errors.name %></p>
-                   <% } %>
+                    <div class="usuario-error"></div>
                     <!-- Password -->
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password" value="<% locals.old && old.email %>">
+                    <div class="contraseña-error"></div>
                     <!-- Checkbox recordarme -->
                     <label for="remind">Recordar usuario</label>
                     <input type="checkbox" name="remind">
@@ -38,7 +37,7 @@
         </main>
 
         <%- include('../partials/footer') %>
-
+            <script src="/js/login.js"></script>
 </body>
 
 </html>

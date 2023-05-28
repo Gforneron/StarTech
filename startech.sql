@@ -86,7 +86,7 @@ CREATE TABLE `usuarios` (
   `email` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `filename` blob NOT NULL,
+  `perfil` blob NOT NULL,
   `confirmed` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -94,7 +94,7 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `email`, `username`, `password`, `filename`, `confirmed`) VALUES
+INSERT INTO `usuarios` (`id`, `email`, `username`, `password`, `perfil`, `confirmed`) VALUES
 (1, 'gonzaloforneron@gmail.com', 'gonzalo', '$2a$08$s6BlzDEQuS6POxE0BeTKAOMPsfYfEk6ny.TQxqOJvWwsaKsBD7zQO', 0x70657266696c2d313638323730333533393336332e6a7067, '$2a$08$ru.zPEz.bhnufTNXXzlfS.nZUHXNZwiCwxarLIC73vyGucWNAIaku'),
 (2, 'maximovelasquez@gmail.com', 'maximo', '$2a$08$BqF1UVTnn.ucY.7djstN0ONt6/5cC7oUqH/HitMXYzTYmRUvZ.Xy2', 0x70657266696c2d313638323730333731303138322e6a7067, '$2a$08$Gf2vQlPnWS2C15WhR2U.lei7G0SWvHr0r1SFDw/wq2AoutXoO6q9.'),
 (3, 'franciscoquiroga@gmail.com', 'francisco', '$2a$08$/Qu5kcOz1ar8dg6AFrgDJOfxI8v9AwU2aeJFRYuUDKswldyxacGdu', 0x70657266696c2d313638323730333734373639382e6a7067, '$2a$08$s8F6fwzj074b9dyUJaRoY.MN7lN7vFTbGJ43yqO6ftEoBZfhMIurq'),
