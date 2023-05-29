@@ -104,7 +104,7 @@ window.onload = function () {
       let ul = document.querySelector("ul.errores");
       ul.innerHTML = "";
       errores.forEach((err) => {
-        ul.innerHTML = `<li> ${err} </li>` 
+        ul.innerHTML = `<li>${errores}</li>` 
       })
     } else {
       form.submit();
