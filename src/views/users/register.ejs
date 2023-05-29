@@ -5,6 +5,7 @@
     <%- include('../partials/head.ejs') %>
     <title>Register</title>
     <link rel="stylesheet" href="/css/users/register.css">
+    <script src="/js/register.js"></script>
 </head>
 
 <body>
@@ -16,26 +17,29 @@
             <form id="register-form" action="/usuarios/register" method="POST" enctype="multipart/form-data">
                 <h3>Registrarse</h3>
                 <label for="Usuario">Nombre de Usuario</label>
-                <input type="text" name="username" id="name" value="<%= locals.old && old.username %>">
+                <input type="text" name="username" id="name"  value="<%= locals.old && old.username %>">
+                <div class="error-name"></div>
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" value="<%= locals.old && old.email %>">
+                <div class="error-email"></div>
                 <label id="perfil">Foto de perfil</label>
                 <div class="btn">
                     <p>Ingrese una imagen</p>
                     <input type="file" name="perfil" id="image-input" class="imagen" accept="image/*">
                 </div>
+                <div class="error-perfil"></div>
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password">
+                <div class="error-pass"></div>
                 <label for="confirmed-pass">Confirmar Contraseña</label>
                 <input type="password" name="confirmed" id="confirmed-pass">
+                <div class="error-confirmed"></div>
                 <input type="submit" value="Registrar">
                 <div>
-                    <% if (locals.errors) {%>
-                    <% errors.forEach(error => { %>
-                    <p><%= error.msg %></p>
-                    <% }) %>
-                    <% } %>
                 </div>
+                <ul>
+                    <div class="errores"></div>
+                </ul>
                 <div class="Bajo_formulario">
                     <a href="">Olvido su Contraseña?</a>
                     <a href="/usuarios/login">Ingresar</a>
@@ -45,26 +49,6 @@
     </main>
 
     <%- include('../partials/footer') %>
-
-    <script>
-        document.getElementById('register-form').addEventListener('submit', function(e) {
-            e.preventDefault(); // Evita que el formulario se envíe automáticamente
-
-            var fileInput = document.getElementById('image-input');
-            var file = fileInput.files[0];
-
-            if (file && file.type.startsWith('image/')) {
-                // El archivo es válido, puedes continuar con el proceso de registro
-                // Aquí puedes agregar tu lógica para enviar el formulario al backend, por ejemplo:
-                // document.getElementById('register-form').submit();
-                console.log('Archivo válido');
-            } else {
-                // El archivo no es válido
-                console.log('Archivo inválido');
-            }
-        });
-    </script>
-
 </body>
 
 </html>
