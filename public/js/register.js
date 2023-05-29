@@ -50,19 +50,20 @@ window.onload = function () {
     //     errores.push("Tiene que tener un correo valido");
     //     errorEmail.innerHTML = "Tiene que tener un correo valido";
     // }
-    const imagen = document.getElementById("image-input");
+    const imagen = document.querySelector("#image-input");
     const imagenError = document.querySelector(".error-perfil");
-    imagen.addEventListener("change", function (e) {
-      e.preventDefault();
-      if (!imagen || imagen === "undefined" || imagen === null) {
-        imagenError.classList.add("error");
-        imagenError.classList.add("error-img");
-        imagenError.innerHTML = "Ingrese una imagen";
-      } else {
-        imagenError.classList.remove("error");
-        imagenError.classList.remove("error-img");
-      }
-    });
+    const extenciones = ['.jpeg','.png','jpg']
+    if (imagen.value == '') {
+      imagenError.classList.add("error");
+      imagenError.innerHTML = "Ingrese una imagen";
+    } else if (imagen.value !== extenciones.values) {
+      imagenError.classList.add("error");
+      imagenError.innerHTML = "Solo acepta imagenes en formato JPEG PNG y JPG";      
+    } 
+    else {
+      imagenError.classList.remove("error");
+      imagenError.classList.remove("error-perfil");
+    }
     const password = document.getElementById("password");
     const passwordError = document.querySelector(".error-pass");
     if (password.value.length == 0) {
@@ -104,8 +105,8 @@ window.onload = function () {
       let ul = document.querySelector("ul.errores");
       ul.innerHTML = "";
       errores.forEach((err) => {
-        ul.innerHTML = `<li>${errores}</li>` 
-      })
+        ul.innerHTML = `<li> ${errores} </li>`;
+      });
     } else {
       form.submit();
     }
