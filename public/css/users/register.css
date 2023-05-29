@@ -123,3 +123,13 @@ a {
   width: 100%;
   border: dashed 2px rgb(54, 53, 53);    
 }
+
+.error {
+  color: crimson;
+  font-size: 13px;
+  padding-bottom: 5px;
+}
+.error-img {
+  border: dashed 2px crimson;
+  color: crimson
+}
