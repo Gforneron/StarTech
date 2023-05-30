@@ -14,20 +14,32 @@ a {
 .login h3 {
   text-align: center;
 }
+.login #formulario {
+  border-left: solid 2px whitesmoke;
+}
+#logo-login {
+  position: absolute;
+  top: 100px;
+  left: 5px;
+  height: 250px;
+}
 .login {
   border-radius: 2%;
-  width: 320px;
+  width: 750px;
   height: 420px;
   background: rgb(25, 25, 25);
   color: rgb(255, 255, 255);
-  left: 38%;
+  left: 25%;
   margin-top: 40px;
   position: relative;
   box-sizing: border-box;
-  padding: 30px 30px;
+  padding: 30px;
+  padding-left: 300px;
+  padding-right: 55px;
+  padding-bottom: 27rem;
 }
 .login label {
-  margin: 0;
+  margin-left: 20px;
   padding: 0;
   font-weight: bold;
   display: block;
@@ -35,11 +47,12 @@ a {
 
 .login input {
   width: 100%;
+  margin-left: 20px;
   margin-bottom: 25px;
 }
 .login input[type="text"],
 .login input[type="password"] {
-  border: none;
+  border:none;
   outline: none;
   border-bottom: 1px solid rgb(255, 255, 255);
   background: transparent;
@@ -72,6 +85,7 @@ a {
   cursor: pointer;
 }
 .Bajo_formulario {
+  margin-left: 20px;
   display: flex;
   justify-content: space-between;
 }

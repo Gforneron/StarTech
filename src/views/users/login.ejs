@@ -20,12 +20,16 @@
                     <input type="text" name="username" id="username" placeholder="Username">
                     <div class="usuario-error"></div>
                     <!-- Password -->
+                    <img src="/images/Logo_StarTech.svg" height="60" id="logo-login" alt="">                        
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password" value="<% locals.old && old.email %>">
                     <div class="contraseña-error"></div>
+                    
                     <!-- Checkbox recordarme -->
-                    <label for="remind">Recordar usuario</label>
-                    <input type="checkbox" name="remind">
+                    <div class="checkbox">                        
+                        <label for="remind">Recordar usuario</label>
+                        <input type="checkbox" name="remind">
+                    </div>
                     <!-- Boton -->
                     <input type="submit" value="Ingresar">
                     <div class="Bajo_formulario">
