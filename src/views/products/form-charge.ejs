@@ -4,6 +4,7 @@
 <%- include('../partials/head.ejs') %>
 <title>Charge Products</title>
 <link rel="stylesheet" href="/css/productos/form-style.css">
+<script src="/js/forms.js"></script>
 
 <body>
     <header>
@@ -11,20 +12,23 @@
     </header>
     </main>
     <!-- conectar el formulario al controller -->
-    <form action="/productos/create" method="POST" class="main-form" enctype="multipart/form-data">
+    <form action="/productos/create" method="POST" class="main-form" id="form" enctype="multipart/form-data">
         </div class="form">
         <h3 id="titulo">Formulario de carga del producto</h3>
         <div class="main-input">
             <label for="nombre">Nombre del Producto</label>
             <input type="text" name="nombre" id="nombre">
+            <div class="error-nombre"></div>
             <div class="descuento">
                 <label for="descuento">Descuento</label>
                 <input type="number" name="descuento" id="descuento" cols="30" rows=""/>
             </div>
+            <div class="error-descuento"></div>
             <div class="btn">
-                <p>Ingrese una imagen</p>
-                <input type="file" name="imagen" class="imagen" />
+                <p id="error-imagen-text">Ingrese una imagen</p>
+                <input type="file" name="imagen" id="imagen" class="imagen" />
             </div>
+            <div class="error-imagen"></div>
         </div>
         <h3 id="titulo">Categoria</h3>
         <select name="clase">
@@ -40,6 +44,7 @@
         </div>
         <div class="precio">
             <label for="precio">Precio</label>
+            <div class="error-precio"></div>
             <input type="number" name="precio" id="precio">
             <input type="submit" name="boton" value="Enviar" id="boton">
         </div>

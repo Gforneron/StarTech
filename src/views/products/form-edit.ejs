@@ -5,24 +5,27 @@
     <%- include('../partials/head.ejs') %>
         <link rel="stylesheet" href="/css/productos/form-edit.css">
         <title>Formulario de Edicion</title>
+        <script src="/js/form-edit.js"></script>
 </head>
 
 <body>
     <%- include('../partials/header') %>
         <main>
-            <form method="POST" action="/productos/<%= product.id %>/edit?_method=PUT" enctype="multipart/form-data">
+            <form method="POST" action="/productos/<%= product.id %>/edit?_method=PUT" id="form" enctype="multipart/form-data">
                 <div class="form">
                     <h3>Formulario de Edicion</h3>
                     <label for="nombre">Nombre</label>
                     <input type="text" name="nombre" id="nombre" value="<%= product.nombre %>">
+                    <div class="error-nombre"></div>
                     <label for="descuento">Descuento</label>
-                    <textarea name="descuento"><%= product.descuento %></textarea>
+                    <textarea name="descuento" id="descuento"><%= product.descuento %></textarea>
+                    <div class="error-descuento"></div>
                     <div class="btn">
-                        <p>Ingrese una imagen</p>
-                        <input type="file" name="imagen" class="imagen" />
+                        <p id="error-imagen-text">Ingrese una imagen</p>
+                        <input type="file" name="imagen" class="imagen" id="imagen"/>
                     </div>
                     <h3>Categoria</h3>
-                    <select name="clase">
+                    <select name="clase" id="categoria">
                         <option value="<%= product.clase %>">
                             <%= product.clase %>
                         </option>
@@ -31,7 +34,9 @@
                         <option value="tv_y_audio">Tv y audio</option>
                         <option value="congeladores">Congeladores</option>
                     </select>
+                    <div class="error-categoria"></div>
                     <h3>Precio</h3>
+                    <div class="error-precio"></div>
                     <input type="number" name="precio" id="precio" value="<%= product.precio%>">
                     <input type="submit" name="submit" value="Enviar" id="boton">
                 </div>
