@@ -34,7 +34,7 @@ app.use(cookieParser());
 app.use('/', require('./routers/mainRoutes.js'))              // rutas para el inicio de la aplicación
 app.use('/productos', require('./routers/productsRoutes.js')) // rutas para los productos
 app.use('/usuarios', require('./routers/userRoutes.js'));        // rutas para los usuarios
-
+app.use('/api',require('./routers/apiRoutes.js'))
 // Manejar errores 404
 app.use((req, res, next) => {
     res.status(404).render("main/no-encontrado"); // renderizar la vista 404 cuando no se encuentra la ruta
