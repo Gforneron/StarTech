@@ -1,4 +1,5 @@
 const { body } = require("express-validator");
+const usuario = require("../database/models/Usuario.js");
 const register = [
   body("username")
     .notEmpty()
@@ -24,6 +25,13 @@ const register = [
     .withMessage("Nesecitas un correo")
     .isEmail()
     .withMessage("El email no es valido")
+    .custom(async (correo) => {
+      const user = await usuario.findOne({where: {email: correo}});
+      if (user) {
+        console.log("email repetido");
+        throw new Error('El correo ya pertenece a un usuario');
+      }
+    })
     .bail(),
   body("perfil").custom((value, { req }) => {
     const extend = ['.jpeg','.png','.gif' || '.JPEG','.PNG','.GIF']

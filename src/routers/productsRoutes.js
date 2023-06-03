@@ -4,13 +4,13 @@ const router = express.Router();
 const multer = require('multer');
 
 //Llamado de middlewares
-const autenticacionMiddleware = require("../middlewares/autenticacionMiddleware")
+const autenticacionMiddleware = require("../middlewares/autenticacionMiddleware");
+const validationCreateProduct = require("../middlewares/validationCreateProduct");
 
 const productController = require("../controllers/productsController.js");
 router.use(express.urlencoded({ extended: false }));
 
 // Inplementacion de Multer
-
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, 'public/images/productos')
