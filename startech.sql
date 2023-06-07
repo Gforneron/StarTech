@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-05-2023 a las 17:17:21
+-- Tiempo de generación: 07-06-2023 a las 15:32:42
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -86,7 +86,7 @@ CREATE TABLE `usuarios` (
   `email` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `perfil` blob NOT NULL,
+  `perfil` text NOT NULL,
   `confirmed` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -95,10 +95,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `email`, `username`, `password`, `perfil`, `confirmed`) VALUES
-(1, 'gonzaloforneron@gmail.com', 'gonzalo', '$2a$08$s6BlzDEQuS6POxE0BeTKAOMPsfYfEk6ny.TQxqOJvWwsaKsBD7zQO', 0x70657266696c2d313638323730333533393336332e6a7067, '$2a$08$ru.zPEz.bhnufTNXXzlfS.nZUHXNZwiCwxarLIC73vyGucWNAIaku'),
-(2, 'maximovelasquez@gmail.com', 'maximo', '$2a$08$BqF1UVTnn.ucY.7djstN0ONt6/5cC7oUqH/HitMXYzTYmRUvZ.Xy2', 0x70657266696c2d313638323730333731303138322e6a7067, '$2a$08$Gf2vQlPnWS2C15WhR2U.lei7G0SWvHr0r1SFDw/wq2AoutXoO6q9.'),
-(3, 'franciscoquiroga@gmail.com', 'francisco', '$2a$08$/Qu5kcOz1ar8dg6AFrgDJOfxI8v9AwU2aeJFRYuUDKswldyxacGdu', 0x70657266696c2d313638323730333734373639382e6a7067, '$2a$08$s8F6fwzj074b9dyUJaRoY.MN7lN7vFTbGJ43yqO6ftEoBZfhMIurq'),
-(4, 'urielblanco@gmail.com', 'uriel', '$2a$08$s9jw80UmWa0IM35oireFn.OeFtrhFBL/PMnNbLFTjWB57Ag/xb48a', 0x70657266696c2d313638323730333737303330302e6a7067, '$2a$08$6KHk2hmY1fhNvmqsV4Tg..7.LFN8ft/y5xsKsSAn1wueel0y5alq2');
+(1, 'gonzaloforneron@gmail.com', 'gonzalo', '$2a$08$s6BlzDEQuS6POxE0BeTKAOMPsfYfEk6ny.TQxqOJvWwsaKsBD7zQO', 'perfil-1682703539363.jpg', '$2a$08$ru.zPEz.bhnufTNXXzlfS.nZUHXNZwiCwxarLIC73vyGucWNAIaku'),
+(2, 'maximovelasquez@gmail.com', 'maximo', '$2a$08$BqF1UVTnn.ucY.7djstN0ONt6/5cC7oUqH/HitMXYzTYmRUvZ.Xy2', 'perfil-1682703710182.jpg', '$2a$08$Gf2vQlPnWS2C15WhR2U.lei7G0SWvHr0r1SFDw/wq2AoutXoO6q9.'),
+(3, 'franciscoquiroga@gmail.com', 'francisco', '$2a$08$/Qu5kcOz1ar8dg6AFrgDJOfxI8v9AwU2aeJFRYuUDKswldyxacGdu', 'perfil-1682703747698.jpg', '$2a$08$s8F6fwzj074b9dyUJaRoY.MN7lN7vFTbGJ43yqO6ftEoBZfhMIurq'),
+(4, 'urielblanco@gmail.com', 'uriel', '$2a$08$s9jw80UmWa0IM35oireFn.OeFtrhFBL/PMnNbLFTjWB57Ag/xb48a', 'perfil-1682703770300.jpg', '$2a$08$6KHk2hmY1fhNvmqsV4Tg..7.LFN8ft/y5xsKsSAn1wueel0y5alq2');
 
 --
 -- Índices para tablas volcadas

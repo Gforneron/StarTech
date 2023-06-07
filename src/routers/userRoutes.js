@@ -35,12 +35,13 @@ router.post("/passVerify", userController.changePass);
 router.get("/register", sessionMiddleware, userController.register);
 
 // formulario register
+// formulario register
 router.post(
   "/register",
-  validation,
   upload.single("perfil"),
   userController.newUser
 );
+
 
 // retorno formulario login
 router.get("/login", sessionMiddleware, validation, userController.login);

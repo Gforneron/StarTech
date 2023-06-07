@@ -61,7 +61,9 @@ userController.newUser = async (req, res) => {
     password: bcryptjs.hashSync(req.body.password, 8),
     email: req.body.email,
     confirmed: bcryptjs.hashSync(req.body.confirmed, 8),
+    perfil: req.file.path // Guardar la ruta de la imagen en el campo 'perfil'
   };
+
   if (errores.isEmpty()) {
     await db.Usuario.create(dataUser);
     return res.redirect("/usuarios/login");
@@ -69,6 +71,7 @@ userController.newUser = async (req, res) => {
     res.render("users/register", { errors: errores.array(), old: req.body });
   }
 };
+
 // retorno formulario login
 
 userController.login = (req, res) => {
