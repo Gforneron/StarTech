@@ -6,8 +6,6 @@ const apiProductsController = require('../controllers/apiProductsController.js')
 
 router.get('/usuarios',apiUserController.list)
 router.get('/usuarios/:id',apiUserController.search)
-router.post('/usuarios',apiUserController.create)
-router.delete('/usuarios/:id',apiUserController.delete)
 // api productos
 router.get('/productos',apiProductsController.list)
 router.get('/productos',apiProductsController.create)
