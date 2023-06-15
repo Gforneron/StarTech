@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Header } from './components/HeaderPanels';
+import { UserPanel } from './components/UserPanel.jsx';
+import { PanelLeft } from './components/Nav.jsx' 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Link to='#'> */}
+      {/* home */}
+      {/* </Link> */}
+      <Header />
+      <PanelLeft/>
+      <UserPanel users="30"/>
     </div>
   );
 }
