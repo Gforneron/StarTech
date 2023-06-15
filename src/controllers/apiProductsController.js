@@ -1,7 +1,7 @@
 const db = require("../database/models");
 module.exports = {
   list: async (req, res) => {
-    let listProduct = await db.Producto.findAll(req.body, {
+    const listProduct = await db.Producto.findAll(req.body, {
       attributes: ["id","nombre","clase_id"]
     });
     listProductsDetails = listProduct.map((product) => ({
@@ -34,9 +34,23 @@ module.exports = {
   },
 
   search: async (req, res) => {
-    const producto = await db.Producto.findByPk(req.params.id);
+    const producto = await db.Producto.findByPk(req.params.id, {
+      attributes: ["id","nombre","descuento","precio","clase_id"]
+    });
+
+    const listCategory = await db.Clase.findAll();
+
+    let categoryProduct = [];
+    let categoryType = listCategory.filter(
+      (name) => name.id == producto.clase_id 
+    );
+    
+    categoryProduct.push(categoryType[0].nombre);
+
     return res.status(200).json({
-      producto: producto,
+      product: producto,
+      category: categoryProduct,
+      imageProduct: `/api/productos/${producto.id}/${producto.imagen}`
     });
   }
 };
