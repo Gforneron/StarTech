@@ -1,0 +1,9 @@
+
+.usuario-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.spacer {
+  height: 60px; /* Ajusta la altura según tus necesidades */
+}

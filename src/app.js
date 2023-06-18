@@ -7,7 +7,7 @@ const path = require("path");                      // manejo de rutas
 
 // Crear la aplicación de Express
 const app = express();
-const port = process.env.port || 3000; // obtener el puerto desde una variable de entorno o usar el 3000 por defecto
+const port = process.env.port || 3001; // obtener el puerto desde una variable de entorno o usar el 3000 por defecto
 
 // Permitir el uso de otros métodos HTTP en formularios
 app.use(methodOverride ("_method"));
@@ -45,4 +45,4 @@ app.use(express.urlencoded({extended: false})); // transformar los datos de form
 app.use(express.json());                        // permitir el uso de JSON en las solicitudes
 
 // Iniciar el servidor
-app.listen(port, () => console.log("Corriendo servidor en: http://localhost:3000/"));
+app.listen(port, () => console.log("Corriendo servidor en: http://localhost:3001/"));

@@ -1,0 +1,97 @@
+/* Chart.css */
+
+.card {
+    margin-bottom: 1.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  .table-responsive {
+    overflow-x: auto;
+  }
+  
+  .table {
+    width: 100%;
+    margin-bottom: 0;
+    color: #212529;
+  }
+  
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+  }
+  
+  .table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+  }
+  
+  .table td,
+  .table th {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+  }
+  
+  .table td {
+    word-break: break-word;
+  }
+  
+  .table-bordered {
+    border: 1px solid #dee2e6;
+  }
+  
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #dee2e6;
+  }
+  
+  .table-bordered thead th,
+  .table-bordered thead td {
+    border-bottom-width: 2px;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  @media (min-width: 576px) {
+    .table-responsive-sm {
+      overflow-x: auto;
+    }
+    .table-responsive-sm > .table {
+      margin-bottom: 0;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .table-responsive-md {
+      overflow-x: auto;
+    }
+    .table-responsive-md > .table {
+      margin-bottom: 0;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .table-responsive-lg {
+      overflow-x: auto;
+    }
+    .table-responsive-lg > .table {
+      margin-bottom: 0;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .table-responsive-xl {
+      overflow-x: auto;
+    }
+    .table-responsive-xl > .table {
+      margin-bottom: 0;
+    }
+  }
+  

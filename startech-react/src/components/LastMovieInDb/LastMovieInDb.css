@@ -1,0 +1,50 @@
+.last-movie-card {
+    background-color: #fff;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+  }
+  
+  .last-movie-header {
+    margin-bottom: 1rem;
+  }
+  
+  .last-movie-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .last-movie-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .last-movie-image-container {
+    margin-bottom: 1.5rem;
+  }
+  
+  .last-movie-image {
+    width: 40rem;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .last-movie-text {
+    margin-bottom: 1.5rem;
+    color: #555;
+  }
+  
+  .last-movie-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #dc3545;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0.25rem;
+  }
+  
+  .last-movie-link:hover {
+    background-color: #c82333;
+  }
+  

@@ -1,0 +1,16 @@
+.custom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .custom-header {
+    margin-bottom: 2rem;
+  }
+  
+  .custom-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  

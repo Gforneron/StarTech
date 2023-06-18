@@ -1,0 +1,127 @@
+/* userPanel.css */
+
+.main-panel {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .panel-title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .users-info {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .info-box {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .info-label {
+    font-size: 16px;
+    margin-right: 10px;
+    color: #fff;
+  }
+  
+  .info-value {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .users-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .users-table th,
+  .users-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .users-table th {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .users-table td {
+    font-size: 14px;
+    color: #555;
+  }
+/* userPanel.css */
+
+.main-panel {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.panel-title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.users-info {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.info-box {
+  background-color: #333;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.info-label {
+  font-size: 16px;
+  margin-right: 10px;
+  color: #fff;
+}
+
+.info-value {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.users-table th,
+.users-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.users-table th {
+  font-weight: bold;
+  color: #333;
+}
+
+.users-table td {
+  font-size: 14px;
+  color: #555;
+}
+  

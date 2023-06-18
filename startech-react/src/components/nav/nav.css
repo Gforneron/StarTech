@@ -1,0 +1,53 @@
+/* nav.css */
+
+.sidebar {
+    background-color: rgb(26, 26, 26);
+    color: #fff;
+    width: 250px;
+    padding: 20px;
+  }
+  
+  .sidebar-brand {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .sidebar-brand-icon {
+    margin-right: 10px;
+  }
+  
+  .sidebar-brand-icon img {
+    width: 150px;
+  }
+  
+  .sidebar-divider {
+    margin: 10px 0;
+    border-top: 1px solid #fff;
+  }
+  
+  .nav-item {
+    margin-bottom: 10px;
+    list-style: none; /* Eliminar el punto de la lista */
+  }
+  
+  .nav-link {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .nav-link i {
+    margin-right: 10px;
+  }
+  
+  .sidebar-heading {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  /* Additional styles can be added here as needed */
+  
