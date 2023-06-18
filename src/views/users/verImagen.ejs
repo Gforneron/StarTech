@@ -1,0 +1,9 @@
+<%- include('../partials/head') %>
+<title>Ver Imagen</title>
+<body>
+    <% if (userDetail) {%>
+        <img src="/images/usuarios/<%= userDetail.perfil %>" alt="Imagen">
+    <% }else if (userDetail == null || userDetail == undefined) {%>
+        <h1><%= error %></h1>
+    <% } %>
+</body>

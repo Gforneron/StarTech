@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.main-header {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(26, 26, 26);
+    color: whitesmoke;
+    padding: 20px;
+}
+p {
+    margin: 10px;
+}
