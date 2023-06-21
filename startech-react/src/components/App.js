@@ -1,15 +1,15 @@
 // Librerias
 import React from "react";
-import { Route, Switch} from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 // Componentes
 import GenresInDb from "./GenresInDb/GenresInDb";
 import ContentWrapper from "./ContentWrapper/ContentWrapper";
 import LastMovieInDb from "./LastMovieInDb/LastMovieInDb";
 import ContentRowMovies from "./ContentRowMovies/ContentRowMovies";
+import {ViewUser} from "./userpanel/viewUser";
 import Usuario from "./Usuarios/usuarios";
-import { PanelLeft } from './nav/Nav'; 
-
+import { PanelLeft } from "./nav/Nav";
 
 function App() {
   return (
@@ -37,9 +37,11 @@ function App() {
           <Route exact path="/usuarios">
             <Usuario />
           </Route>
-
+          <Route exact path="/usuarios/user/:userId">
+            <ViewUser/>
+          </Route>
           <Route exact path="*">
-            <img src="https://www.searchenginejournal.com/wp-content/uploads/2020/08/404-pages-sej-5f3ee7ff4966b.png"/>
+            <img src="https://www.searchenginejournal.com/wp-content/uploads/2020/08/404-pages-sej-5f3ee7ff4966b.png" />
           </Route>
         </Switch>
       </div>
