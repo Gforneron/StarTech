@@ -1,21 +1,26 @@
-import React from 'react';
-import '../userpanel/userPanel.css';
-
+import React from "react";
+import "../userpanel/userPanel.css";
+import { useEffect, useState } from "react";
 export function UserPanel(props) {
-  const users = [
-    { id: 1, name: 'Usuario 1', mail: 'gonzaloforneron@gmail.com'},
-    { id: 2, name: 'Usuario 2', mail: 'gonzaloforneron@gmail.com' },
-    { id: 3, name: 'Usuario 3', mail: 'gonzaloforneron@gmail.com' },
-    { id: 4, name: 'Usuario 4', mail: 'gonzaloforneron@gmail.com' },
-  ]; // Ejemplo de array de usuarios
-
+  const [usuario, SetUsuarios] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3001/api/usuarios")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        SetUsuarios(data.lista)
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
   return (
     <div className="main-panel">
       <h1 className="panel-title">Usuarios Creados</h1>
       <div className="users-info">
         <div className="info-box">
           <p className="info-label">Cantidad de usuarios:</p>
-          <p className="info-value">{users.length}</p>
+          <p className="info-value">{usuario.length}</p>
         </div>
       </div>
       <table className="users-table">
@@ -28,11 +33,11 @@ export function UserPanel(props) {
           </tr>
         </thead>
         <tbody>
-          {users.map((user) => (
-            <tr key={user.id}>
+          {usuario.map((user) => (
+            <tr>
               <td>{user.id}</td>
               <td>{user.name}</td>
-              <td>{user.mail}</td>
+              <td>{user.email}</td>
               <td>ir al usuario {user.id}</td>
             </tr>
           ))}
