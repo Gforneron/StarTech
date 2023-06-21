@@ -50,7 +50,13 @@ module.exports = {
     return res.status(200).json({
       product: producto,
       category: categoryProduct,
-      imageProduct: `/api/productos/${producto.id}/${producto.imagen}`
+      //imageProduct: `/api/productos/${producto.id}/${producto.imagen}`
     });
+  },
+
+  verImagen: async(req, res) =>{
+    const userID = req.params.id;
+    const productDetail = await db.Producto.findByPk(userID,{attributes: ['id','imagen']});
+    res.render('products/productImagen',{productDetail,error:'No se encontro imagen del producto'})
   }
 };

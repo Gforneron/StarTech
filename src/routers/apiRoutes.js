@@ -10,6 +10,5 @@ router.get('/imagen/:id',apiUserController.verImagen)
 // api productos
 router.get('/productos',apiProductsController.list)
 router.get('/productos/:id',apiProductsController.search)
-//router.get('/productos',apiProductsController.create)
-//router.get('/productos/:id',apiProductsController.delete)
+router.get('/productImagen/:id',apiProductsController.verImagen)
 module.exports = router
