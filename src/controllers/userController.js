@@ -121,15 +121,22 @@ userController.perfil = (req, res) => {
   usuario = req.session.usuarioLogueado;
   res.render("users/perfil");
 };
-userController.perfilEditView = (req, res) => {
-  res.render("users/perfilEdit");
+userController.perfilEditView = async (req, res) => {
+  const user = await db.Usuario.findOne({ where: { id: req.params.id } });
+  res.render("users/perfilEdit",{user});
 };
-userController.perfilEdit = (req, res) => {
-  const { username, email, original } = req.body;
-  db.Usuario.update(
-    { username: username, email: email, perfil: req.file },
-    { where: { email: original } }
-  );
+userController.perfilEdit = async (req, res) => {
+  const { username, email, original, perfil } = req.body;
+  const user = await db.Usuario.findOne({ where: { id: req.params.id } });
+
+  if (!user) {
+    return res.status(404).send("Usuario no encontrado");
+  }
+  user.username = username;
+  user.original = email;
+  user.perfil = req.file.filename;
+  await user.save();
+  
   return res.redirect("/usuarios/perfil");
 };
 // cerrado de sesion

@@ -51,6 +51,10 @@ router.post("/login", validation, userController.compareUser);
 
 //  retorno perfil
 router.get("/perfil", autenticacionMiddleware, userController.perfil);
+// retorno de perfil edit
+router.get('/editar-perfil',autenticacionMiddleware,userController.perfilEditView);
+// post del perfil edit
+router.post('/perfilEdit/:id',userController.perfilEdit)
 
 // cerrado de sesion
 router.get("/cerrar", userController.cerrar);
