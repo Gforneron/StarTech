@@ -23,14 +23,6 @@ function Chart() {
       <div className="card-body">
         <div className="table-responsive">
           <table className="table" id="dataTable">
-            <thead>
-              <tr>
-                <th>Producto</th>
-                <th>Descuento</th>
-                <th>Precio</th>
-                <th>Categoria</th>
-              </tr>
-            </thead>
             <tbody>
               {tableRowsData.map((row, i) => {
                 return <ChartRow {...row} key={i} />;

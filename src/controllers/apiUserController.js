@@ -11,7 +11,7 @@ module.exports = {
         id: user.id,
         name: user.name,
         email: user.email,
-        detail: `http://localhost:3001/api/imagen/${user.id}`
+        perfil: user.perfil
       }));
       
       return res.status(200).json({
@@ -37,6 +37,7 @@ module.exports = {
         id: user.id,
         name: user.username,
         email: user.email,
+        perfil: user.perfil
       }
     });
   },

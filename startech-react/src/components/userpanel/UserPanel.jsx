@@ -1,11 +1,8 @@
 import React from "react";
 import "../userpanel/userPanel.css";
 import { useEffect, useState } from "react";
-<<<<<<< HEAD
-
-=======
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
->>>>>>> f3e99bcbf1eeae2b2adeca0a2aaceae02e581f75
+
 export function UserPanel(props) {
 
   const [usuario, SetUsuarios] = useState([]);
