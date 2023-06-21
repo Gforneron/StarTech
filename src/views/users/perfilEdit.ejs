@@ -4,7 +4,7 @@
 <body>
   <%- include('../partials/header') %>
   <main>
-    <form action="/usuarios/perfilEdit" method="POST" enctype="multipart/form-data">
+    <form action="/usuarios/perfilEdit/<%= user %>" method="POST" enctype="multipart/form-data">
       <div class="perfil">
         <div class="btn">
           <p>Ingrese una imagen</p>
