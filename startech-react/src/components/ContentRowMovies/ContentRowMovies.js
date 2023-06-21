@@ -1,51 +1,69 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SmallCard from '../SmallCard/SmallCard';
 import './ContentRowMovies.css';
 
-/*  Cada set de datos es un objeto literal */
+function ContentRowMovies() {
+  const [usuario, setUsuarios] = useState([]);
+  const [productos, setProductos] = useState([]);
+  const [categorias, setCategorias] = useState(0);
 
-/* <!-- Productos in DB --> */
+  useEffect(() => {
+    fetch("http://localhost:3001/api/usuarios")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setUsuarios(data.lista);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
-let moviesInDB = {
+  useEffect(() => {
+    fetch("http://localhost:3001/api/productos")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setProductos(data.products);
+        setCategorias(Object.keys(data.countByCategory).length);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
+  let ProductosDB = {
     title: 'Cantidad productos',
-    color: 'primary', 
-    cuantity: 8,
-    icon: 'fa-clipboard-list'
-}
+    color: 'primary',
+    cuantity: productos.length,
+    icon: 'fa fa-shopping-cart'
+  };
+  
 
-/* <!-- Total awards --> */
+  let UsuariosDB = {
+    title: 'Cantidad de usuarios',
+    color: 'success',
+    cuantity: usuario.length,
+    icon: 'fa-user'
+  };
 
-let totalAwards = {
-    title:' Total awards', 
-    color:'success', 
-    cuantity: '79',
-    icon:'fa-award'
-}
+  let categoriasCard = {
+    title: 'Cantidad de categorías',
+    color: 'success',
+    cuantity: categorias,
+    icon: 'fa fa-tags'
+  };
+  
 
-/* <!-- Actors quantity --> */
+  let cartProps = [ProductosDB, UsuariosDB, categoriasCard];
 
-let actorsQuantity = {
-    title:'Actors quantity' ,
-    color:'warning',
-    cuantity:'49',
-    icon:'fa-user-check'
-}
-
-let cartProps = [moviesInDB, totalAwards, actorsQuantity];
-
-function ContentRowMovies(){
-    return (
-    
-        <div className="row">
-            
-            {cartProps.map( (movie, i) => {
-
-                return <SmallCard {...movie} key={i}/>
-            
-            })}
-
-        </div>
-    )
+  return (
+    <div className="row">
+      {cartProps.map((movie, i) => {
+        return <SmallCard {...movie} key={i} />;
+      })}
+    </div>
+  );
 }
 
 export default ContentRowMovies;

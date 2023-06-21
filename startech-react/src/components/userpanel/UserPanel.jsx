@@ -1,19 +1,23 @@
 import React from "react";
 import "../userpanel/userPanel.css";
 import { useEffect, useState } from "react";
+
 export function UserPanel(props) {
+
   const [usuario, SetUsuarios] = useState([]);
   useEffect(() => {
+
     fetch("http://localhost:3001/api/usuarios")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data)
-        SetUsuarios(data.lista)
+        console.log(data);
+        SetUsuarios(data.lista);
       })
       .catch((error) => {
         console.error(error);
       });
   }, []);
+  
   return (
     <div className="main-panel">
       <h1 className="panel-title">Usuarios Creados</h1>

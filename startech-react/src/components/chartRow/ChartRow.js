@@ -1,24 +1,45 @@
-import React from 'react';
-import './ChartRow.css';
+import React, { useState, useEffect } from 'react';
 
-function ChartRow(props){
-    return (
-                <tr>
-                    <td>{props.Title}</td>
-                    <td>{props.Length}</td>
-                    <td>{props.Rating}</td>
-                    <td>
-                        <ul>
-                            {props.Categories.map( (category,i) => 
-                                <li key={`category ${i}`}>{category}</li>
-                            )}
-                        </ul>
-                    </td>
-                    <td>{props.Awards}</td>
-                </tr>
-            )
-    }
-    
-        
+function App() {
+  const [productos, setProductos] = useState([]);
 
-export default ChartRow;
+  useEffect(() => {
+    fetch("http://localhost:3001/api/productos")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setProductos(data.products);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
+  return (
+    <div>
+      <h1>Lista de productos</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Descuento</th>
+            <th>Precio</th>
+            <th>Clase</th>
+          </tr>
+        </thead>
+        <tbody>
+          {productos.map((producto) => (
+            <tr key={producto.id}>
+              <td> {producto.name}</td>
+              <td> </td>
+              <td> </td>
+              <td>{producto.category}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export default App;

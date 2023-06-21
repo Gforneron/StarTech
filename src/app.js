@@ -4,6 +4,7 @@ const session = require("express-session");        // manejo de sesiones
 const methodOverride = require('method-override'); // permitir el uso de otros métodos HTTP en formularios
 const cookieParser = require("cookie-parser");     // manejo de cookies
 const path = require("path");                      // manejo de rutas
+const cors = require("cors");
 
 // Crear la aplicación de Express
 const app = express();
@@ -19,6 +20,7 @@ app.set('views', path.resolve(__dirname,'views')); // establecer la carpeta de v
 // Configurar la carpeta pública para servir archivos estáticos
 const publico = path.resolve(__dirname, "../public");
 app.use(express.static(publico));
+app.use(cors());
 
 // Configurar el manejo de sesiones
 app.use(session({
