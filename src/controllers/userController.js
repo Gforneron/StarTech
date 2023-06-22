@@ -101,7 +101,7 @@ userController.compareUser = async (req, res) => {
 
     if (match) {
       if (req.body.remind) {
-        res.cookie("reminduser", req.body.username, { maxAge: 1000 * 60 });
+        res.cookie("reminduser", req.body.username, { maxAge: 1000 * 60 * 60});
       }
 
       req.session.usuarioLogueado = user;
