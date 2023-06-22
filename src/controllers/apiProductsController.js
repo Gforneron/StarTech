@@ -55,8 +55,8 @@ module.exports = {
   },
 
   verImagen: async(req, res) =>{
-    const userID = req.params.id;
-    const productDetail = await db.Producto.findByPk(userID,{attributes: ['id','imagen']});
+    const productID = req.params.id;
+    const productDetail = await db.Producto.findByPk(productID,{attributes: ['id','imagen']});
     res.render('products/productImagen',{productDetail,error:'No se encontro imagen del producto'})
   }
 };

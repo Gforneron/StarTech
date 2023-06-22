@@ -2,7 +2,7 @@
 <title>Ver Imagen</title>
 <body>
     <% if (productDetail) {%>
-        <img src="/images/productos/<%= productDetail.iamgen %>" alt="Imagen">
+        <img src="/images/productos/<%= productDetail.imagen %>" alt="Imagen">
     <% }else if (productDetail == null || productDetail == undefined) {%>
         <h1><%= error %></h1>
     <% } %>

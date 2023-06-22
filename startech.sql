@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-06-2023 a las 15:32:42
+-- Tiempo de generación: 22-06-2023 a las 03:32:53
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -57,7 +57,7 @@ CREATE TABLE `productos` (
   `nombre` varchar(100) NOT NULL,
   `descuento` decimal(65,0) NOT NULL,
   `precio` decimal(65,0) NOT NULL,
-  `imagen` longblob NOT NULL,
+  `imagen` text NOT NULL,
   `clase_id` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -66,14 +66,14 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `nombre`, `descuento`, `precio`, `imagen`, `clase_id`) VALUES
-(1, 'Celular Motorola', '13', '129999', 0x696d6167656e2d313638323730343839343633382e6a7067, 5),
-(2, 'Celular Samgung', '10', '49999', 0x696d6167656e2d313638323730353233393438302e6a7067, 5),
-(3, 'Notebook Asus', '13', '180777', 0x696d6167656e2d313638323730353335343234312e6a7067, 6),
-(4, 'Notebook Noblex', '30', '148000', 0x696d6167656e2d313638323730353431343038312e6a7067, 6),
-(5, 'Placa de Video', '39', '120000', 0x696d6167656e2d313638323730353536313330392e6a7067, 7),
-(6, 'Smart TV LED', '27', '270000', 0x696d6167656e2d313638323730353632383932392e6a7067, 3),
-(7, 'Smart TV Samsung', '15', '99999', 0x696d6167656e2d313638323730353636373439362e6a7067, 3),
-(8, 'Tablet Lenovo', '15', '91218', 0x696d6167656e2d313638323730353830363935332e6a7067, 8);
+(1, 'Celular Motorola', '13', '129999', 'imagen-1682704894638.jpg', 5),
+(2, 'Celular Samgung', '10', '49999', 'imagen-1682705239480.jpg', 5),
+(3, 'Notebook Asus', '13', '180777', 'imagen-1682705354241.jpg', 6),
+(4, 'Notebook Noblex', '30', '148000', 'imagen-1682705414081.jpg', 6),
+(5, 'Placa de Video', '39', '120000', 'imagen-1682705561309.jpg', 7),
+(6, 'Smart TV LED', '27', '270000', 'imagen-1682705628929.jpg', 3),
+(7, 'Smart TV Samsung', '15', '99999', 'imagen-1682705667496.jpg', 3),
+(8, 'Tablet Lenovo', '15', '91218', 'imagen-1682705806953.jpg', 8);
 
 -- --------------------------------------------------------
 

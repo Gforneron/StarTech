@@ -17,7 +17,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.DECIMAL,
     },
     imagen: {
-      type: DataTypes.BLOB,
+      type: DataTypes.TEXT,
     },
     clase_id: {
       type: DataTypes.INTEGER,
