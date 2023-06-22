@@ -50,7 +50,7 @@ module.exports = {
     return res.status(200).json({
       product: producto,
       category: categoryProduct,
-      //imageProduct: `/api/productos/${producto.id}/${producto.imagen}`
+      imageProduct: `/api/productImagen/${producto.id}`
     });
   },
 
