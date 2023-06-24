@@ -21,7 +21,6 @@ function Chart() {
   return (
     <div className="card shadow mb-4">
       <div className="card-body">
-        <div className="table-responsive">
           <table className="table" id="dataTable">
             <tbody>
               {tableRowsData.map((row, i) => {
@@ -30,7 +29,6 @@ function Chart() {
             </tbody>
           </table>
         </div>
-      </div>
     </div>
   );
 }

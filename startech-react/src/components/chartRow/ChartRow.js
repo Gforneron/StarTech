@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 function App() {
   const [productos, setProductos] = useState([]);
@@ -7,7 +7,6 @@ function App() {
     fetch("http://localhost:3001/api/productos")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setProductos(data.products);
       })
       .catch((error) => {
@@ -31,9 +30,9 @@ function App() {
           {productos.map((producto) => (
             <tr key={producto.id}>
               <td> {producto.name}</td>
-              <td> </td>
-              <td> </td>
-              <td>{producto.category}</td>
+              <td> {producto.descuento} %</td>
+              <td> {producto.precio} $</td>
+              <td> {producto.category}</td>
             </tr>
           ))}
         </tbody>
