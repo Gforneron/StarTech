@@ -1,12 +1,14 @@
 // LLamado de modulos
 const { validationResult } = require("express-validator");
 const bcryptjs = require("bcryptjs");
+
 // llamado base de datos
 const db = require("../database/models");
 
 const userController = {};
 
 // recuperar contraseña
+
 userController.newPassword = (req, res) => {
   res.render("users/olvidar", {
     validacion: false,
@@ -61,7 +63,7 @@ userController.newUser = async (req, res) => {
     password: bcryptjs.hashSync(req.body.password, 8),
     email: req.body.email,
     confirmed: bcryptjs.hashSync(req.body.confirmed, 8),
-    perfil: req.file.path // Guardar la ruta de la imagen en el campo 'perfil'
+    perfil: req.file.filename,
   };
 
   if (errores.isEmpty()) {
@@ -101,7 +103,7 @@ userController.compareUser = async (req, res) => {
 
     if (match) {
       if (req.body.remind) {
-        res.cookie("reminduser", req.body.username, { maxAge: 1000 * 60 * 60});
+        res.cookie("reminduser", req.body.username, { maxAge: 1000 * 60 * 60 });
       }
 
       req.session.usuarioLogueado = user;
@@ -123,7 +125,7 @@ userController.perfil = (req, res) => {
 };
 userController.perfilEditView = async (req, res) => {
   const user = await db.Usuario.findOne({ where: { id: req.params.id } });
-  res.render("users/perfilEdit",{user});
+  res.render("users/perfilEdit", { user });
 };
 userController.perfilEdit = async (req, res) => {
   const { username, email, original, perfil } = req.body;
@@ -136,7 +138,7 @@ userController.perfilEdit = async (req, res) => {
   user.original = email;
   user.perfil = req.file.filename;
   await user.save();
-  
+
   return res.redirect("/usuarios/perfil");
 };
 // cerrado de sesion

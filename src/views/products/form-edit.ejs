@@ -11,7 +11,8 @@
 <body>
     <%- include('../partials/header') %>
         <main>
-            <form method="POST" action="/productos/<%= product.id %>/edit?_method=PUT" id="form" enctype="multipart/form-data">
+            <form method="POST" action="/productos/<%= product.id %>/edit?_method=PUT" id="form"
+                enctype="multipart/form-data">
                 <div class="form">
                     <h3>Formulario de Edicion</h3>
                     <label for="nombre">Nombre</label>
@@ -22,17 +23,18 @@
                     <div class="error-descuento"></div>
                     <div class="btn">
                         <p id="error-imagen-text">Ingrese una imagen</p>
-                        <input type="file" name="imagen" class="imagen" id="imagen"/>
+                        <input type="file" name="imagen" class="imagen" id="imagen" />
                     </div>
                     <h3>Categoria</h3>
                     <select name="clase" id="categoria">
-                        <option value="<%= product.clase %>">
-                            <%= product.clase %>
-                        </option>
-                        <option value="electrodomesticos">Electrodomesticos</option>
-                        <option value="lavado">Lavado</option>
-                        <option value="tv_y_audio">Tv y audio</option>
-                        <option value="congeladores">Congeladores</option>
+                        <option value="1">Electrodomesticos</option>
+                        <option value="2">Lavado</option>
+                        <option value="3">Tv y audio</option>
+                        <option value="4">Congeladores</option>
+                        <option value="5">Celular</option>
+                        <option value="6">Nootebook</option>
+                        <option value="7">Componente</option>
+                        <option value="8">Tablet</option>
                     </select>
                     <div class="error-categoria"></div>
                     <h3>Precio</h3>

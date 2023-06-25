@@ -113,7 +113,7 @@ productController.newProduct = async (req, res) => {
     nombre: req.body.nombre,
     precio: req.body.precio,
     descuento: req.body.descuento,
-    imagen: req.file,
+    imagen: req.file.filename,
     clase_id: req.body.clase,
   };
   // Crear el nuevo producto en la base de datos

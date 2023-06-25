@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-06-2023 a las 03:32:53
+-- Tiempo de generación: 25-06-2023 a las 22:51:52
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -95,10 +95,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `email`, `username`, `password`, `perfil`, `confirmed`) VALUES
-(1, 'gonzaloforneron@gmail.com', 'gonzalo', '$2a$08$s6BlzDEQuS6POxE0BeTKAOMPsfYfEk6ny.TQxqOJvWwsaKsBD7zQO', 'perfil-1682703539363.jpg', '$2a$08$ru.zPEz.bhnufTNXXzlfS.nZUHXNZwiCwxarLIC73vyGucWNAIaku'),
-(2, 'maximovelasquez@gmail.com', 'maximo', '$2a$08$BqF1UVTnn.ucY.7djstN0ONt6/5cC7oUqH/HitMXYzTYmRUvZ.Xy2', 'perfil-1682703710182.jpg', '$2a$08$Gf2vQlPnWS2C15WhR2U.lei7G0SWvHr0r1SFDw/wq2AoutXoO6q9.'),
-(3, 'franciscoquiroga@gmail.com', 'francisco', '$2a$08$/Qu5kcOz1ar8dg6AFrgDJOfxI8v9AwU2aeJFRYuUDKswldyxacGdu', 'perfil-1682703747698.jpg', '$2a$08$s8F6fwzj074b9dyUJaRoY.MN7lN7vFTbGJ43yqO6ftEoBZfhMIurq'),
-(4, 'urielblanco@gmail.com', 'uriel', '$2a$08$s9jw80UmWa0IM35oireFn.OeFtrhFBL/PMnNbLFTjWB57Ag/xb48a', 'perfil-1682703770300.jpg', '$2a$08$6KHk2hmY1fhNvmqsV4Tg..7.LFN8ft/y5xsKsSAn1wueel0y5alq2');
+(1, 'gonzaloforneron@gmail.com', 'gonzalo', '$2a$08$DGOV2LbkOTomg.IoBCqGve4dbLYSDegDjp3SbVFPwypAIQ4lz.QwG', 'perfil-1687725574411.jpg', '$2a$08$Gn0STFDoJtwX7CklePnflO6PPEq4ZLp42T5I4CDInGhmQcZE67jNO'),
+(2, 'urielblanco@gmail.com', 'uriel', '$2a$08$NDk5FuOkWFiaftU1KB3zBeM8DCib0hxoAqHN9066gWMRxkv2WqAJi', 'perfil-1687725656515.jpg', '$2a$08$Xvpb0sgmU0.m530pBBJSduGNGe6beKf09DfMKmPl4WAZSqQwN.d4W'),
+(3, 'maximovelasquez@gmail.com', 'maximo', '$2a$08$FLpZseimnt/kYfsSy0BEMex9d3VO5/8N0YeGQ3nFZK/RvUaIkXBZ.', 'perfil-1687725732614.jpg', '$2a$08$8Mgt6sy/d.m/f0fTm.sA0.bMmouiDpu7zAXWndew76RGoOb/nCja.'),
+(4, 'franciscoquiroga@gmail.com', 'francisco', '$2a$08$wWhkjWWSjObxvm9qjuAbGOhic9FHUYT8yKfY6ak13myZ53hNQLsZG', 'perfil-1687725768655.jpg', '$2a$08$Czk9aI7ehAiQvOKf1zd3PeboFJ7oGzYV.MQUNARvAUD5KiRbfrJpy');
 
 --
 -- Índices para tablas volcadas
@@ -131,7 +131,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `clases`
 --
 ALTER TABLE `clases`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
