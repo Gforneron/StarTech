@@ -123,26 +123,37 @@ userController.perfil = (req, res) => {
   usuario = req.session.usuarioLogueado;
   res.render("users/perfil");
 };
+
+// Retorno de perfilEdit
 userController.perfilEditView = async (req, res) => {
   const user = await db.Usuario.findOne({ where: { id: req.params.id } });
   res.render("users/perfilEdit", { user });
 };
+
 userController.perfilEdit = async (req, res) => {
-  const { username, email, original, perfil } = req.body;
-  const user = await db.Usuario.findOne({ where: { id: req.params.id } });
+  try {
+    const user = await db.Usuario.findOne({ where: { id: req.params.id } });
 
-  if (!user) {
-    return res.status(404).send("Usuario no encontrado");
+    if (!user) {
+      return res.status(404).send("Usuario no encontrado");
+    }
+
+    const result = await db.Usuario.update(
+      { username: req.body.username, email: req.body.email },
+      { where: { id: req.params.id } }
+    );
+
+    console.log(result); // Imprimir el resultado de la consulta de actualización en la consola
+
+    return res.redirect("/usuarios/perfil");
+  } catch (error) {
+    console.error("Error al editar el perfil:", error);
+    return res.status(500).send("Error al editar el perfil");
   }
-  user.username = username;
-  user.original = email;
-  user.perfil = req.file.filename;
-  await user.save();
-
-  return res.redirect("/usuarios/perfil");
 };
-// cerrado de sesion
 
+
+// cerrado de sesion
 userController.cerrar = (req, res) => {
   req.session.destroy();
   return res.redirect("/");

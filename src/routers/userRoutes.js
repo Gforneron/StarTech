@@ -52,7 +52,7 @@ router.post("/login", validation, userController.compareUser);
 router.get("/perfil", autenticacionMiddleware, userController.perfil);
 
 // retorno de perfil edit
-router.get('/editar-perfil',autenticacionMiddleware,userController.perfilEditView);
+router.get('/editar-perfil/:id',autenticacionMiddleware,userController.perfilEditView);
 
 // post del perfil edit
 router.post('/perfilEdit/:id',userController.perfilEdit)
