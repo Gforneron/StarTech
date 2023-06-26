@@ -7,6 +7,7 @@ const path = require("path"); // manejo de rutas
 const cors = require("cors"); // permitir el acceso a peticiones del Dashboad
 const helmet = require("helmet"); // Implementacion de seguridad
 const expressRate = require("express-rate-limit"); // Permitidos de frecuencias de las solicitudes(evitar ataques DoS)
+
 // Crear la aplicación de Express
 const app = express();
 const port = process.env.port || 3001; // obtener el puerto desde una variable de entorno o usar el 3000 por defecto
@@ -59,10 +60,7 @@ app.use("/", require("./routers/mainRoutes.js")); // rutas para el inicio de la 
 app.use("/productos", require("./routers/productsRoutes.js")); // rutas para los productos
 app.use("/usuarios", require("./routers/userRoutes.js")); // rutas para los usuarios
 app.use("/api", limite, require("./routers/apiRoutes.js"));
-// Manejar errores 404
-app.use((req, res, next) => {
-  res.status(404).render("main/no-encontrado"); // renderizar la vista 404 cuando no se encuentra la ruta
-});
+
 
 // Transformar los datos de formularios a objetos y JSON
 app.use(express.urlencoded({ extended: false })); // transformar los datos de formularios a objetos

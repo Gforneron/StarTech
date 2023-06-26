@@ -22,8 +22,7 @@
                     <textarea name="descuento" id="descuento"><%= product.descuento %></textarea>
                     <div class="error-descuento"></div>
                     <div class="btn">
-                        <p id="error-imagen-text">Ingrese una imagen</p>
-                        <input type="file" name="imagen" class="imagen" id="imagen" />
+                        <img src="/images/productos/<%= product.imagen %>" alt="Imagen de <%= product.nombre %>" width="200"> 
                     </div>
                     <h3>Categoria</h3>
                     <select name="clase" id="categoria">

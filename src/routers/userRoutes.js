@@ -35,7 +35,6 @@ router.post("/passVerify", userController.changePass);
 router.get("/register", sessionMiddleware, userController.register);
 
 // formulario register
-// formulario register
 router.post(
   "/register",
   upload.single("perfil"),
@@ -51,8 +50,10 @@ router.post("/login", validation, userController.compareUser);
 
 //  retorno perfil
 router.get("/perfil", autenticacionMiddleware, userController.perfil);
+
 // retorno de perfil edit
 router.get('/editar-perfil',autenticacionMiddleware,userController.perfilEditView);
+
 // post del perfil edit
 router.post('/perfilEdit/:id',userController.perfilEdit)
 

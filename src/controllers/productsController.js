@@ -138,7 +138,6 @@ productController.editar = async (req, res) => {
     product.nombre = req.body.nombre;
     product.precio = req.body.precio;
     product.descuento = req.body.descuento;
-    product.imagen = req.file.filename;
     product.clase_id = req.body.clase;
 
     // Guardar los cambios en la base de datos
