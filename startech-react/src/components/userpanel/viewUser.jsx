@@ -21,7 +21,6 @@ export function ViewUser() {
     <div className="user">
       <div className="details" key={usuarios?.id}>
         <h2>Detalles del usuarios</h2>
-        <p>ID: {usuarios?.id}</p>
         <p>Nombre: {usuarios?.name}</p>
         <p>Email: {usuarios?.email}</p>
         <p>Imagen de Perfil:</p>

@@ -31,7 +31,6 @@ export function UserPanel(props) {
       <table className="users-table">
         <thead>
           <tr>
-            <th>ID</th>
             <th>Nombre</th>
             <th>Email</th>
             <th>detalle usuario</th>
@@ -40,8 +39,7 @@ export function UserPanel(props) {
         <tbody>
           {usuario.map((user) => (
             <tr key={user.id}>
-              <td>{user.id}</td>
-              <td>{user.name}</td>
+              <td>{user.username}</td>
               <td>{user.email}</td>
               <td><Link to={`/usuarios/user/${user.id}`}>ir al usuario {user.id}</Link></td>
             </tr>

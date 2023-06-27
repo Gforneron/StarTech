@@ -61,6 +61,10 @@ app.use("/productos", require("./routers/productsRoutes.js")); // rutas para los
 app.use("/usuarios", require("./routers/userRoutes.js")); // rutas para los usuarios
 app.use("/api", limite, require("./routers/apiRoutes.js"));
 
+// Manejar errores 404
+app.use((req, res, next) => {
+  res.status(404).render("main/no-encontrado"); // renderizar la vista 404 cuando no se encuentra la ruta
+});
 
 // Transformar los datos de formularios a objetos y JSON
 app.use(express.urlencoded({ extended: false })); // transformar los datos de formularios a objetos
