@@ -37,8 +37,8 @@ module.exports = {
         id: user.id,
         name: user.username,
         email: user.email,
-        perfil: user.perfil
-      }
+        perfil: user.perfil,
+      },
     });
   },
 };

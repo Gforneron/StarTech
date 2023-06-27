@@ -27,7 +27,7 @@ window.onload = function () {
       errorName.innerHTML = "";
     }
     const emailExprecion = /^[^\s@]+@gmail\.com$/;
-    const email = document.getElementById("email");
+    const email = document.getElementById("email").value;
     const errorEmail = document.querySelector(".error-email");
     if (email.value === "") {
       email.style.borderBottom = "solid 2px crimson";
@@ -39,17 +39,6 @@ window.onload = function () {
       errorEmail.classList.remove("error-email");
       errorEmail.innerHTML = "";
     }
-    // validacion no terminada de correo
-    // if (emailExprecion.test(email.value)) {
-    //     email.style.borderBottom = 'solid 2px whitesmoke'
-    //     errorEmail.classList.remove("error");
-    //     errorEmail.innerHTML = "";
-    // } else {
-    //     email.style.borderBottom = "solid 2px crimson";
-    //     errorEmail.classList.add("error");
-    //     errores.push("Tiene que tener un correo valido");
-    //     errorEmail.innerHTML = "Tiene que tener un correo valido";
-    // }
     const imagen = document.querySelector("#image-input");
     const imagenError = document.querySelector(".error-perfil");
     const extenciones = ['.jpeg','.png','jpg']
